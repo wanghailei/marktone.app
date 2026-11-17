@@ -10,11 +10,12 @@ export function privateRelease( { version = "0.41.1", body = "", without = [] } 
 	return new Release( { tagName: `v${ version }`, body, assets: names.map( ( name ) => ( { name } ) ) } )
 }
 
-// A site folder holding only the feed of the given version, as a published site would, with every installer at 12,345,678 bytes.
-export function siteWithFeed( folder, { version = "0.41.1" } = {} ) {
+// A site folder holding only the feed of the given version, as a published site would, with every installer at 12,345,678 bytes and
+// the given notes.
+export function siteWithFeed( folder, { version = "0.41.1", changes } = {} ) {
 	const assets = Object.fromEntries( Installer.all.map( ( installer ) => [ installer.feedKey, { url: `https://github.com/wanghailei/marktone.app/releases/download/v${ version }/${ installer.publishedName }`, sha256: "0".repeat( 64 ), size: 12_345_678 } ] ) )
 	mkdirSync( join( folder, "download" ), { recursive: true } )
-	writeFileSync( join( folder, "download/latest.json" ), JSON.stringify( { version, notes: `https://github.com/wanghailei/marktone.app/releases/tag/v${ version }`, assets } ) )
+	writeFileSync( join( folder, "download/latest.json" ), JSON.stringify( { version, notes: "https://marktone.app/download/", changes, assets } ) )
 	return new Site( { folder } )
 }
 

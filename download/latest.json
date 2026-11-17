@@ -1,6 +1,7 @@
 {
 	"version": "0.46.0",
-	"notes": "https://github.com/wanghailei/marktone.app/releases/tag/v0.46.0",
+	"notes": "https://marktone.app/download/",
+	"changes": "**New since 0.45.3**\n- **Check for Updates is in Settings.** A new Updates section at the bottom of Settings shows the running version and a Check button. When marktone.app names a newer version, Settings says which: on Linux a Download button opens marktone.app/download; on a Mac an Install button offers to install it.",
 	"assets": {
 		"macos-arm64": {
 			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-arm64.dmg",

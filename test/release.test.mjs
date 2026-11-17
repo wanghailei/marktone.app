@@ -26,3 +26,9 @@ test( "When the notes list what is new, the public notes carry that list and the
 test( "When the notes list nothing new, the public notes carry only the download page", () => {
 	assert.equal( privateRelease( { body: "Built on Arch Linux." } ).publicNotes, "Download and install: https://marktone.app/download/\n" )
 } )
+
+test( "When the notes say what is new in this version and what changed since an earlier one, the changes carry both lists", () => {
+	const body = "**New in 0.46.3**\n- **Check for updates in Settings.**\n\n**Since 0.45.3**\n- Up and Down keep the caret's column.\n\n**Install on Linux (x86-64)**\n- `marktone_0.46.3_amd64.deb`\n\nBuilt on Arch Linux.\n"
+
+	assert.equal( privateRelease( { body } ).changes, "**New in 0.46.3**\n- **Check for updates in Settings.**\n\n**Since 0.45.3**\n- Up and Down keep the caret's column." )
+} )

@@ -99,3 +99,14 @@ test( "When more than three releases are public, the oldest are deleted", () => 
 		assert.deepEqual( destination.deleted, [ "v0.37.3" ] )
 	} )
 } )
+
+test( "When the newest release is already on the site, its notes as they now stand are written on the pages", () => {
+	withinSite( "0.41.1", ( site, folder ) => {
+		const release = privateRelease( { body: "**New since 0.40.1**\n- **Body text is 400 Regular by default.**\n" } )
+
+		new Sync( { source: new Source( release ), destination: new Destination( { tags: [ "v0.41.1" ] } ), site } ).sync()
+
+		assert.match( readFileSync( join( folder, "download/index.html" ), "utf8" ), /<li><strong>Body text is 400 Regular by default\.<\/strong><\/li>/ )
+		assert.equal( JSON.parse( readFileSync( join( folder, "download/latest.json" ), "utf8" ) ).notes, "https://marktone.app/download/" )
+	} )
+} )

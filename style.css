@@ -47,6 +47,12 @@
 	h2 { margin-bottom: var( --marktone-space ); }
 	h3 { margin-top: calc( var( --marktone-space ) * 2 ); }
 	p { margin-bottom: var( --marktone-space ); }
+	/* A release's lists of what changed: each item behind a hyphen, as the notes are written, its lines hanging under its first word. */
+	ul { list-style: none; margin-bottom: var( --marktone-space ); }
+	li { padding-left: 2ch; text-indent: -2ch; }
+	li::before { content: "- "; }
+	/* A list's bold heading sits on the line above it. */
+	p:has( + ul ) { margin-bottom: 0; }
 	strong { font-weight: 700; }
 	code { font: inherit; }
 	/* Links are underlined thinly, so a download reads as one at a glance on a page of one colour. */
