@@ -1,27 +1,27 @@
 {
-	"version": "0.46.0",
+	"version": "0.46.3",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New since 0.45.3**\n- **Check for Updates is in Settings.** A new Updates section at the bottom of Settings shows the running version and a Check button. When marktone.app names a newer version, Settings says which: on Linux a Download button opens marktone.app/download; on a Mac an Install button offers to install it.",
+	"changes": "**New in 0.46.3**\n- **Check for updates in Settings.** Settings has a Version section showing the version you are running and its date, with a Check for updates button. When a newer Marktone is out, it says which: on Linux a Download button opens the download page, and on a Mac an Install button installs it.\n\n**Since 0.45.3**\n- Check for Updates reads marktone.app, so it finds new versions without a login.\n- Up and Down into a row off the page keep the caret's column.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-arm64.dmg",
-			"sha256": "b2ef31bf3827b7ef453fe2b33c2293f6e68b9f590804ad65e2967e65df7060de",
-			"size": 13007991
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-arm64.dmg",
+			"sha256": "905377a7a23fe2ad042956b3bd9154c907709a60976bff1ee7446b90f34df9eb",
+			"size": 13024088
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.AppImage",
-			"sha256": "92a976227400d04ee091d36187f65746a1a40a5d3b0f729dfa327e7078da8686",
-			"size": 21023224
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.AppImage",
+			"sha256": "cf54491cc28163443e50c5bf95802c941e8e4c606d02b74420740ae31dc4edd3",
+			"size": 21051896
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-amd64.deb",
-			"sha256": "e98934d28332d8341c443bff4d5b53f0649ee01b500c3433d5b44f0f44680a5b",
-			"size": 22111578
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-amd64.deb",
+			"sha256": "53dffd4165c53ff4326432e360407f0ad0ceca72ea9d19ad48636f4924a1c5e8",
+			"size": 22113050
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.tar.gz",
-			"sha256": "0233f95fa150df4d93a8d21956f3faf962bb9ba754dbb321b70a956239fccf93",
-			"size": 22135743
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.tar.gz",
+			"sha256": "f2c66c3785eff81e1c6b88f96bfa20c6f257463dde8c7512194951e6a79fa684",
+			"size": 22138354
 		}
 	}
 }
