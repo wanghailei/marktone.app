@@ -55,6 +55,10 @@
 	p:has( + ul ) { margin-bottom: 0; }
 	strong { font-weight: 700; }
 	code { font: inherit; }
+	/* A line to copy into a terminal: set in from the text, wrapped on a narrow screen without changing what is copied, and taken whole
+		by one click. */
+	pre { margin-bottom: var( --marktone-space ); padding-left: 2ch; white-space: pre-wrap; overflow-wrap: anywhere; }
+	pre code { user-select: all; -webkit-user-select: all; }
 	/* Links are underlined thinly, so a download reads as one at a glance on a page of one colour. */
 	a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 	a:hover { text-decoration-thickness: 2px; }

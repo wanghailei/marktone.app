@@ -139,3 +139,18 @@ test( "When the feed carries no notes, the pages show the version alone", () => 
 		assert.match( readFileSync( join( folder, "index.html" ), "utf8" ), /<p class="muted">Version 0\.42\.0<\/p>\n\n\t\t\t<h3>/ )
 	} )
 } )
+
+test( "When the site is rendered, both pages show Linux's install line and then its uninstall line, above the packages", () => {
+	withinFolder( ( folder ) => {
+		siteWithFeed( folder, { version: "0.42.0" } ).render()
+
+		for( const page of [ "index.html", "download/index.html" ] ) {
+			const text = readFileSync( join( folder, page ), "utf8" )
+			const install = text.indexOf( "<pre><code>curl -fsSL https://marktone.app/install.sh | sh</code></pre>" )
+			const uninstall = text.indexOf( "<pre><code>curl -fsSL https://marktone.app/uninstall.sh | sh</code></pre>" )
+			assert.ok( install > text.indexOf( "Linux (x86-64)" ), page )
+			assert.ok( uninstall > install, page )
+			assert.ok( text.indexOf( "Marktone-x86_64.AppImage" ) > uninstall, page )
+		}
+	} )
+} )

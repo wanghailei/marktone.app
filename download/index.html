@@ -31,6 +31,11 @@
 			<p>Open the <code>.dmg</code> and drag Marktone into Applications. The first time, right-click Marktone in Applications and choose Open: Marktone is not notarised by Apple, so macOS refuses a plain double-click.</p>
 
 			<h3>Linux (x86-64)</h3>
+			<p>Install Marktone, or update it, with one line in a terminal. It puts Marktone, its menu entry and its icon in your own folders under <code>~/.local</code>, and needs no <code>sudo</code>:</p>
+			<pre><code>curl -fsSL https://marktone.app/install.sh | sh</code></pre>
+			<p>Remove it with this line. It removes only what the installer put in place, and keeps your settings and your Markdown files:</p>
+			<pre><code>curl -fsSL https://marktone.app/uninstall.sh | sh</code></pre>
+			<p>Or download a package:</p>
 			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">21.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>Make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it.</p>
 			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">22.1 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
 			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">22.1 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.0/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
