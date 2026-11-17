@@ -163,7 +163,8 @@ test( "When the site is rendered, each Linux line has a labelled copy button, hi
 			const text = readFileSync( join( folder, page ), "utf8" )
 			assert.match( text, /<pre><code>curl -fsSL https:\/\/marktone\.app\/install\.sh \| sh<\/code><\/pre>\s*<button type="button" class="copy" aria-label="Copy the install line" hidden>/, page )
 			assert.match( text, /<pre><code>curl -fsSL https:\/\/marktone\.app\/uninstall\.sh \| sh<\/code><\/pre>\s*<button type="button" class="copy" aria-label="Copy the uninstall line" hidden>/, page )
-			assert.ok( text.includes( "<script src=\"/copy.js\" defer></script>" ), page )
+			assert.ok( text.includes( "<script type=\"module\" src=\"/copy.js\"></script>" ), page )
+			assert.ok( text.includes( "<span class=\"copy-hint\" aria-hidden=\"true\"></span></button>" ), page )
 		}
 	} )
 } )

@@ -10,7 +10,7 @@
 	<link rel="preload" href="/fonts/BerkeleyMonoVariable.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="/style.css">
 	<script src="/ground.js"></script>
-	<script src="/copy.js" defer></script>
+	<script type="module" src="/copy.js"></script>
 </head>
 <body>
 	<main>
@@ -40,12 +40,12 @@
 			<p>Install Marktone, or update it, with one line in a terminal. It puts Marktone, its menu entry and its icon in your own folders under <code>~/.local</code>, and needs no <code>sudo</code>:</p>
 			<div class="command">
 				<pre><code>curl -fsSL https://marktone.app/install.sh | sh</code></pre>
-				<button type="button" class="copy" aria-label="Copy the install line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg></button>
+				<button type="button" class="copy" aria-label="Copy the install line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg><span class="copy-hint" aria-hidden="true"></span></button>
 			</div>
 			<p>Remove it with this line. It removes only what the installer put in place, and keeps your settings and your Markdown files:</p>
 			<div class="command">
 				<pre><code>curl -fsSL https://marktone.app/uninstall.sh | sh</code></pre>
-				<button type="button" class="copy" aria-label="Copy the uninstall line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg></button>
+				<button type="button" class="copy" aria-label="Copy the uninstall line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg><span class="copy-hint" aria-hidden="true"></span></button>
 			</div>
 			<p>Or download a package:</p>
 			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">21.1 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>Make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it.</p>

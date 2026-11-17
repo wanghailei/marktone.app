@@ -71,6 +71,11 @@
 	.copy svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.2; }
 	.copy .copy-done, .copy.copied .copy-sheets { display: none; }
 	.copy.copied .copy-done { display: block; }
+	/* Where nothing could be copied, the keys that copy the selected line stand in the icon's place, in the text's own type. */
+	.copy-hint { display: none; font: inherit; line-height: 1.2; white-space: nowrap; }
+	.copy.refused { opacity: 1; }
+	.copy.refused .copy-sheets { display: none; }
+	.copy.refused .copy-hint { display: inline; }
 	/* Links are underlined thinly, so a download reads as one at a glance on a page of one colour. */
 	a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 	a:hover { text-decoration-thickness: 2px; }
