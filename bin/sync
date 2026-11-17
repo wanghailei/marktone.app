@@ -1,0 +1,29 @@
+#!/usr/bin/env ruby
+# Publishes the private repository's latest release on marktone.app when it carries every installer and the site does not have it yet:
+# a public release with the installers under fixed names and their checksums, then the download page and its update feed. It writes
+# the site's files in this checkout and leaves committing them to its caller: the publishing workflow, or an agent landing through Carson.
+#
+# Usage: bin/sync
+# SOURCE_TOKEN may read wanghailei/marktone's releases; without it, gh's own login reads them. GH_TOKEN, or gh's login, writes this
+# repository's releases.
+# Exit codes: 0 when marktone.app is level with the latest complete release, or the latest release is not complete yet; 1 when a step
+# failed, with what failed.
+$LOAD_PATH.unshift File.expand_path( "../lib", __dir__ )
+require "marktone"
+
+if ENV[ "GITHUB_ACTIONS" ] && ENV.fetch( "SOURCE_TOKEN", "" ).empty?
+	warn "The secret MARKTONE_RELEASES_TOKEN is not set, so the private repository's releases cannot be read. Add a token that may read wanghailei/marktone's contents as that secret in this repository's settings, then run the workflow again."
+	exit 1
+end
+
+source_token = ENV.fetch( "SOURCE_TOKEN", "" )
+source = Marktone::Releases.new( repository: "wanghailei/marktone", token: source_token.empty? ? nil : source_token )
+destination = Marktone::Releases.new( repository: Marktone::PUBLIC_REPOSITORY )
+site = Marktone::Site.new( folder: File.expand_path( "..", __dir__ ) )
+
+begin
+	puts Marktone::Sync.new( source: source, destination: destination, site: site ).sync!
+rescue RuntimeError => error
+	warn "marktone.app was not updated: #{ error.message }"
+	exit 1
+end

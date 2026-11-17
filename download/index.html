@@ -1,6 +1,6 @@
 <!doctype html>
-<!-- Behaviour (by eye): the download page shows the latest version, the macOS download, its checksum and the install steps. -->
-<!-- The download links use /releases/latest/download/, so they need no change when a new version is published; the version line and latest.json do. -->
+<!-- Written by bin/sync from lib/marktone/download.html.erb for each release; change the template, not this file. -->
+<!-- Behaviour (by eye): the download page shows the latest version, each platform's downloads with their checksums, and the install steps. -->
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -13,18 +13,26 @@
 	<main>
 		<p><a href="/">Marktone</a></p>
 		<h1>Download Marktone</h1>
-		<p class="muted">Latest version: 0.37.3 · <a href="https://github.com/wanghailei/marktone.app/releases/tag/v0.37.3">Release notes</a></p>
+		<p class="muted">Latest version: 0.41.1 · <a href="https://github.com/wanghailei/marktone.app/releases/tag/v0.41.1">Release notes</a></p>
 
 		<h2>macOS (Apple silicon)</h2>
-		<p><a class="button" href="https://github.com/wanghailei/marktone.app/releases/latest/download/Marktone-arm64.dmg">Download for macOS</a></p>
-		<p class="muted">SHA-256 checksum: <a href="https://github.com/wanghailei/marktone.app/releases/latest/download/Marktone-arm64.dmg.sha256">Marktone-arm64.dmg.sha256</a></p>
-
-		<h2>Install</h2>
+		<p><a class="button" href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-arm64.dmg">Download for macOS</a></p>
+		<p class="muted">SHA-256 checksum: <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-arm64.dmg.sha256">Marktone-arm64.dmg.sha256</a></p>
 		<ol>
 			<li>Open the downloaded <code>.dmg</code>.</li>
 			<li>Drag Marktone into Applications.</li>
 			<li>The first time you open it, right-click Marktone in Applications, choose <strong>Open</strong>, and confirm. Marktone is not notarised by Apple, so macOS refuses a plain double-click the first time.</li>
 		</ol>
+
+		<h2>Linux (x86-64)</h2>
+		<p><a class="button" href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.AppImage">Download the AppImage</a></p>
+		<p class="muted">Or the <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb">Debian and Ubuntu package</a>, or the <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.tar.gz">.tar.gz archive</a>.</p>
+		<p class="muted">SHA-256 checksums: <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.AppImage.sha256">AppImage</a> · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb.sha256">package</a> · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.tar.gz.sha256">archive</a></p>
+		<ul>
+			<li><strong>AppImage:</strong> make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it.</li>
+			<li><strong>Debian or Ubuntu:</strong> <code>sudo apt install ./Marktone-amd64.deb</code></li>
+			<li><strong>Archive:</strong> unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</li>
+		</ul>
 	</main>
 </body>
 </html>

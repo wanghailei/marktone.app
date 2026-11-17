@@ -1,0 +1,38 @@
+<!doctype html>
+<!-- Written by bin/sync from lib/marktone/download.html.erb for each release; change the template, not this file. -->
+<!-- Behaviour (by eye): the download page shows the latest version, each platform's downloads with their checksums, and the install steps. -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Download Marktone</title>
+	<meta name="description" content="Download the latest version of Marktone, a desktop Markdown editor for macOS and Linux.">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main>
+		<p><a href="/">Marktone</a></p>
+		<h1>Download Marktone</h1>
+		<p class="muted">Latest version: <%= release.version %> · <a href="<%= notes %>">Release notes</a></p>
+
+		<h2>macOS (Apple silicon)</h2>
+		<p><a class="button" href="<%= link.( Marktone::Installer.mac ) %>">Download for macOS</a></p>
+		<p class="muted">SHA-256 checksum: <a href="<%= link.( Marktone::Installer.mac ) %>.sha256">Marktone-arm64.dmg.sha256</a></p>
+		<ol>
+			<li>Open the downloaded <code>.dmg</code>.</li>
+			<li>Drag Marktone into Applications.</li>
+			<li>The first time you open it, right-click Marktone in Applications, choose <strong>Open</strong>, and confirm. Marktone is not notarised by Apple, so macOS refuses a plain double-click the first time.</li>
+		</ol>
+
+		<h2>Linux (x86-64)</h2>
+		<p><a class="button" href="<%= link.( Marktone::Installer.appimage ) %>">Download the AppImage</a></p>
+		<p class="muted">Or the <a href="<%= link.( Marktone::Installer.deb ) %>">Debian and Ubuntu package</a>, or the <a href="<%= link.( Marktone::Installer.tarball ) %>">.tar.gz archive</a>.</p>
+		<p class="muted">SHA-256 checksums: <a href="<%= link.( Marktone::Installer.appimage ) %>.sha256">AppImage</a> · <a href="<%= link.( Marktone::Installer.deb ) %>.sha256">package</a> · <a href="<%= link.( Marktone::Installer.tarball ) %>.sha256">archive</a></p>
+		<ul>
+			<li><strong>AppImage:</strong> make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it.</li>
+			<li><strong>Debian or Ubuntu:</strong> <code>sudo apt install ./Marktone-amd64.deb</code></li>
+			<li><strong>Archive:</strong> unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</li>
+		</ul>
+	</main>
+</body>
+</html>

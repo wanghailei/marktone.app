@@ -1,0 +1,47 @@
+# Publishes Marktone's newest release on marktone.app, every 15 minutes and on demand from the Actions tab. bin/sync does the work;
+# this file only runs the tests first, then commits the page and feed bin/sync wrote and asks GitHub Pages to rebuild.
+# It needs the repository secret MARKTONE_RELEASES_TOKEN: a fine-grained token that may read wanghailei/marktone's contents, since
+# that repository is private and its releases are read from there.
+name: Publish the latest release
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+# Two runs at once could publish the same release twice.
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "4.0"
+      - name: Test
+        run: bin/check
+      - name: Publish the release
+        run: bin/sync
+        env:
+          SOURCE_TOKEN: ${{ secrets.MARKTONE_RELEASES_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
+      # A push made with the workflow's own token may not start a Pages build, so one is asked for.
+      - name: Update the site
+        run: |
+          git add download
+          if git diff --cached --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish Marktone $(ruby -rjson -e 'print JSON.parse(File.read("download/latest.json"))["version"]') on marktone.app"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
+        env:
+          GH_TOKEN: ${{ github.token }}
