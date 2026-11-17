@@ -11,8 +11,17 @@ module Marktone
 			@site = site
 		end
 
-		# Publishes the latest release when it is complete and new, and returns a sentence saying what happened.
+		# Publishes the latest release when it is complete and new, renders the site's pages from its feed, and returns a sentence saying
+		# what happened.
 		def sync!
+			outcome = publish_latest!
+			@site.render! if @site.version
+			outcome
+		end
+
+	private
+
+		def publish_latest!
 			release = @source.latest
 			return "#{ release.title } is already on marktone.app; nothing to publish." if @site.version == release.version
 			return "#{ release.title } is not complete yet: it lacks an installer, so marktone.app stays on #{ @site.version || "nothing" }." unless release.complete?
@@ -20,8 +29,6 @@ module Marktone
 			prune!
 			"Published #{ release.title } on marktone.app."
 		end
-
-	private
 
 		def publish!( release )
 			Dir.mktmpdir do |folder|

@@ -1,18 +1,60 @@
 <!doctype html>
-<!-- Behaviour (by eye): the home page names Marktone and links to the download page. -->
-<html lang="en">
+<!-- Written by bin/sync from lib/marktone/templates; change the templates, not this file. -->
+<!-- Behaviour (by eye): white Berkeley Mono text on a dark ground drawn at random from the WHL Colours Palette, the copyright at the foot. -->
+<html lang="en-GB">
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 	<title>Marktone</title>
-	<meta name="description" content="Marktone — a desktop Markdown editor for macOS and Linux.">
+	<meta name="description" content="Marktone, a desktop Markdown editor for macOS and Linux that shows your document rendered as you write it, and saves it as plain Markdown.">
+	<link rel="preload" href="/fonts/BerkeleyMonoVariable.woff2" as="font" type="font/woff2" crossorigin>
 	<link rel="stylesheet" href="/style.css">
+	<script src="/ground.js"></script>
 </head>
 <body>
 	<main>
-		<h1>Marktone</h1>
-		<p>A desktop Markdown editor for macOS and Linux that shows your document rendered as you write it, and saves it as plain Markdown.</p>
-		<p><a class="button" href="/download/">Download Marktone</a></p>
+		<header>
+			<h1>Marktone</h1>
+			<p>A desktop Markdown editor for macOS and Linux that shows your document rendered as you write it, and saves it as plain Markdown.</p>
+		</header>
+
+		<section>
+			<h2>Download</h2>
+			<p class="muted">Version 0.41.1 · <a href="https://github.com/wanghailei/marktone.app/releases/tag/v0.41.1">Release notes</a></p>
+
+			<h3>macOS (Apple silicon)</h3>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">13.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
+			<p>Open the <code>.dmg</code> and drag Marktone into Applications. The first time, right-click Marktone in Applications and choose Open: Marktone is not notarised by Apple, so macOS refuses a plain double-click.</p>
+
+			<h3>Linux (x86-64)</h3>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">21.1 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>Make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">22.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">22.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
+		</section>
+
+		<section>
+			<h2>The Problem</h2>
+			<p>Plain Markdown is easy to keep and hard to read: every heading, emphasis and table is wrapped in <code>#</code>, <code>**</code> and <code>|</code>. A separate preview pane means reading in one place and writing in another.</p>
+		</section>
+
+		<section>
+			<h2>What Marktone Does</h2>
+			<p><strong>Shows the document, not the markup.</strong> Headings, emphasis, lists, quotes, tables, code, links, pictures, task lists and footnotes are drawn as they read. The block under the caret shows its Markdown, so you always edit the real text.</p>
+			<p><strong>Saves as you go, and changes only what you edited.</strong> Every change is saved to the file without asking. Files with Windows line endings are saved with Unix line endings. If another program changes the file you are editing, Marktone tells you.</p>
+			<p><strong>Reads comfortably, day and night.</strong> A day theme and a night theme follow your system's light or dark setting. Settings sets the font (Berkeley Mono Variable when installed), its size and weight, the line height and the width of the text column.</p>
+			<p><strong>Works across a folder.</strong> Open Folder lists a folder's Markdown files in a sidebar, and the outline lists the document's headings, taking you to one with a click. Find and Replace work across the document, Chinese included.</p>
+			<p><strong>Helps you write.</strong> Brackets, quotes and <code>**</code> close as you type, copying gives Markdown, and a task's checkbox ticks with a click. A pasted picture is saved in a <code>&lt;document name&gt;.assets</code> folder beside the document and linked.</p>
+			<p><strong>Exports to HTML and PDF.</strong> Export as HTML writes an HTML file. Export as PDF prints A4 pages through an installed Chrome, Chromium, Edge or Brave.</p>
+			<p>Marktone has no plugins, maths, diagrams, custom CSS or account.</p>
+		</section>
+
+		<section>
+			<h2>When to Use Marktone</h2>
+			<p><strong>Keeping notes, drafts or a book in Markdown files,</strong> and wanting to read them rendered while you write.</p>
+			<p><strong>Editing READMEs and documentation</strong> that must stay plain Markdown in the repository.</p>
+			<p><strong>Writing in Chinese and English,</strong> with the system's input methods.</p>
+		</section>
 	</main>
+	<footer>© 2026 <a href="https://whl.ltd">Wanted Hacker Limited</a> / WANG Hailei</footer>
 </body>
 </html>

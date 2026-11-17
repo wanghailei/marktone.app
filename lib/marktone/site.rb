@@ -1,38 +1,37 @@
 module Marktone
-	# The site's folder: the download page and its update feed, both written from the release being published so they always agree.
+	# The site's folder: the update feed and the two pages rendered from it, the home page and the download page.
 	class Site
-		TEMPLATE = File.expand_path( "download.html.erb", __dir__ )
+		TEMPLATES = File.expand_path( "templates", __dir__ )
+
+		# A page of the site: where it is written, the template that draws its main part, and its title.
+		Page = Data.define( :path, :template, :title )
+		PAGES = [ Page.new( path: "index.html", template: "home", title: "Marktone" ), Page.new( path: "download/index.html", template: "download", title: "Download Marktone" ) ]
 
 		def initialize( folder: )
 			@folder = folder
 		end
 
 		# The version the feed names, or nil before anything has been published.
-		def version
-			JSON.parse( File.read( feed_path ) )[ "version" ] if File.exist?( feed_path )
-		end
+		def version = ( Feed.read( feed_path ).version if File.exist?( feed_path ) )
 
 		def publish!( release:, packages: )
-			FileUtils.mkdir_p File.dirname( feed_path )
-			File.write( feed_path, JSON.pretty_generate( feed( release, packages ) ).gsub( /^( +)/ ) { "\t" * ( $1.size / 2 ) } + "\n" )
-			File.write( File.join( @folder, "download/index.html" ), page( release, packages ) )
+			Feed.for( release: release, packages: packages ).write!( feed_path )
+			render!
+		end
+
+		# Renders every page from the feed. It runs on every sync, so a change to a template reaches the site without a new release.
+		def render!
+			feed = Feed.read( feed_path )
+			downloads = view( "downloads", feed: feed )
+			PAGES.each do |page|
+				content = view( page.template, feed: feed, downloads: downloads )
+				File.write( File.join( @folder, page.path ), view( "layout", page: page, content: content, year: Time.now.year ) )
+			end
 		end
 
 	private
 
 		def feed_path = File.join( @folder, "download/latest.json" )
-
-		def feed( release, packages )
-			assets = packages.to_h do [ it.installer.feed_key, { "url" => address( release, it.installer ), "sha256" => it.sha256, "size" => it.size } ] end
-			{ "version" => release.version, "notes" => "https://github.com/#{ PUBLIC_REPOSITORY }/releases/tag/#{ release.tag }", "assets" => assets }
-		end
-
-		def page( release, packages )
-			link = ->( installer ) { address( release, installer ) }
-			ERB.new( File.read( TEMPLATE ), trim_mode: "-" ).result_with_hash( release: release, link: link, notes: "https://github.com/#{ PUBLIC_REPOSITORY }/releases/tag/#{ release.tag }" )
-		end
-
-		# The file's address on this version's release, so the page and the feed name the same files as the version they show.
-		def address( release, installer ) = "https://github.com/#{ PUBLIC_REPOSITORY }/releases/download/#{ release.tag }/#{ installer.published_name }"
+		def view( name, **locals ) = ERB.new( File.read( File.join( TEMPLATES, "#{ name }.html.erb" ) ), trim_mode: "-" ).result_with_hash( **locals )
 	end
 end

@@ -40,6 +40,14 @@ class SyncTest < Minitest::Test
 		end
 	end
 
+	def test_when_the_newest_release_is_already_on_the_site_its_pages_are_rendered_again_from_the_feed
+		within_site( version: "0.41.1" ) do |site, folder|
+			Marktone::Sync.new( source: Source.new( private_release ), destination: Destination.new( tags: [ "v0.41.1" ] ), site: site ).sync!
+
+			assert_includes File.read( File.join( folder, "index.html" ) ), "Version 0.41.1"
+		end
+	end
+
 	def test_when_the_newest_release_lacks_an_installer_nothing_is_published
 		within_site( version: "0.40.1" ) do |site|
 			destination = Destination.new
@@ -78,9 +86,7 @@ private
 	# A site folder whose feed names the given version.
 	def within_site( version: )
 		Dir.mktmpdir do |folder|
-			FileUtils.mkdir_p File.join( folder, "download" )
-			File.write( File.join( folder, "download/latest.json" ), JSON.generate( "version" => version ) )
-			yield Marktone::Site.new( folder: folder )
+			yield site_with_feed( folder, version: version ), folder
 		end
 	end
 end

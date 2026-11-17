@@ -27,10 +27,33 @@ class SiteTest < Minitest::Test
 		within_published_site do |folder|
 			page = File.read( File.join( folder, "download/index.html" ) )
 
-			assert_includes page, "Latest version: 0.41.1"
+			assert_includes page, "Version 0.41.1"
 			[ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-amd64.deb", "Marktone-x86_64.tar.gz" ].each do
 				assert_includes page, "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/#{ it }\""
 				assert_includes page, "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/#{ it }.sha256\""
+			end
+		end
+	end
+
+	def test_when_a_version_is_published_the_home_page_links_every_installer_of_that_version
+		within_published_site do |folder|
+			page = File.read( File.join( folder, "index.html" ) )
+
+			assert_includes page, "Version 0.41.1"
+			[ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-amd64.deb", "Marktone-x86_64.tar.gz" ].each do
+				assert_includes page, "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/#{ it }\""
+			end
+		end
+	end
+
+	def test_when_the_site_is_rendered_from_its_feed_alone_both_pages_name_the_feeds_version_and_file_sizes
+		Dir.mktmpdir do |folder|
+			site_with_feed( folder, version: "0.42.0" ).render!
+
+			[ "index.html", "download/index.html" ].each do |page|
+				text = File.read( File.join( folder, page ) )
+				assert_includes text, "Version 0.42.0"
+				assert_includes text, "12.3 MB"
 			end
 		end
 	end

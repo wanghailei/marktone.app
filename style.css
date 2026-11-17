@@ -1,26 +1,64 @@
-/* The site's one stylesheet: a single plain column that follows the reader's light or dark setting. */
+/* The site's one stylesheet, in the house style of whl.ltd and imightfeel.ai: Berkeley Mono at one size, white on a dark ground,
+	hierarchy from weight and whitespace alone, with no lines, boxes or shadows. ground.js picks the ground on each visit. */
 @layer site {
+	/* ---------- Typeface ---------- */
+	/* The licensed Berkeley Mono variable font, the file imightfeel.ai serves, so one family carries every weight. */
+	@font-face {
+		font-family: "Berkeley Mono";
+		src: url( "/fonts/BerkeleyMonoVariable.woff2" ) format( "woff2" );
+		font-weight: 100 900;
+		font-style: normal;
+		font-display: swap;
+	}
+
 	/* ---------- Tokens ---------- */
 	:root {
-		color-scheme: light dark;
-		--marktone-text: light-dark( #1d1d1f, #f2f2f2 );
-		--marktone-background: light-dark( #ffffff, #161617 );
-		--marktone-muted: light-dark( #6e6e73, #a1a1a6 );
-		--marktone-accent: light-dark( #0a5fd8, #6aa8ff );
+		--marktone-ground: #000000;
+		--marktone-ink: #ffffff;
+		--marktone-space: 2ch;
+		color-scheme: dark;
+		/* The ground paints the root, so the safe areas and the ends of a scroll take it too. */
+		background: var( --marktone-ground );
+		color: var( --marktone-ink );
+		/* No rubber-band bounce at the scroll ends, as on every WHL page. */
+		overscroll-behavior: none;
+		-webkit-text-size-adjust: none;
+		text-size-adjust: none;
 	}
 
 	/* ---------- Page ---------- */
-	* { box-sizing: border-box; }
-	body { margin: 0; background: var( --marktone-background ); color: var( --marktone-text ); font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif; }
-	main { max-width: 40rem; margin: 0 auto; padding: clamp( 2rem, 8vw, 4rem ) 1rem; }
-	h1 { font-size: 2rem; margin: 0 0 0.5rem; }
-	h2 { font-size: 1.15rem; margin: 2.5rem 0 0.5rem; }
-	a { color: var( --marktone-accent ); }
-	code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.9em; }
+	* { margin: 0; padding: 0; box-sizing: border-box; }
+	/* The copyright holds the foot of a short page and follows the text on a long one. */
+	body {
+		min-height: 100vh;
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
+		padding: calc( var( --marktone-space ) * 1.5 );
+		font-family: "Berkeley Mono", "IBM Plex Mono", monospace;
+		font-size: 14px;
+		line-height: 1.7;
+	}
+	main { flex: 1; max-width: 640px; }
+	header { margin-bottom: calc( var( --marktone-space ) * 6 ); }
+	section { margin-bottom: calc( var( --marktone-space ) * 5 ); }
+	h1, h2, h3 { font-size: inherit; font-weight: 700; letter-spacing: 0.02em; }
+	h1 { margin-bottom: var( --marktone-space ); }
+	h2 { margin-bottom: var( --marktone-space ); }
+	h3 { margin-top: calc( var( --marktone-space ) * 2 ); }
+	p { margin-bottom: var( --marktone-space ); }
+	strong { font-weight: 700; }
+	code { font: inherit; }
+	/* Links are underlined thinly, so a download reads as one at a glance on a page of one colour. */
+	a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+	a:hover { text-decoration-thickness: 2px; }
+	h1 a { text-decoration: none; }
+	footer { margin-top: calc( var( --marktone-space ) * 4 ); }
+	footer a { text-decoration: none; }
+	footer a:hover { text-decoration: underline; }
 
 	/* ---------- Reusable pieces ---------- */
-	.muted { color: var( --marktone-muted ); }
-	/* The button text takes the page background, so it contrasts with the accent in both themes. */
-	.button { display: inline-block; padding: 0.7rem 1.2rem; border-radius: 0.5rem; background: var( --marktone-accent ); color: var( --marktone-background ); text-decoration: none; font-weight: 600; }
-	.button:hover { opacity: 0.9; }
+	.muted { opacity: 0.6; }
+	/* A file's size and checksum stay together on one line, never broken at the hyphen of SHA-256. */
+	span.muted { white-space: nowrap; }
 }

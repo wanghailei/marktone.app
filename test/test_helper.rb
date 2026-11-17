@@ -11,3 +11,11 @@ def private_release( version: "0.41.1", body: "", without: [] )
 	assets = names.map do { "name" => it } end
 	Marktone::Release.new( "tagName" => "v#{ version }", "body" => body, "assets" => assets )
 end
+
+# A site folder holding only the feed of the given version, as a published site would, with every installer at 12,345,678 bytes.
+def site_with_feed( folder, version: "0.41.1" )
+	assets = Marktone::Installer.all.to_h do [ it.feed_key, { "url" => "https://github.com/wanghailei/marktone.app/releases/download/v#{ version }/#{ it.published_name }", "sha256" => "0" * 64, "size" => 12_345_678 } ] end
+	FileUtils.mkdir_p File.join( folder, "download" )
+	File.write( File.join( folder, "download/latest.json" ), JSON.generate( "version" => version, "notes" => "https://github.com/wanghailei/marktone.app/releases/tag/v#{ version }", "assets" => assets ) )
+	Marktone::Site.new( folder: folder )
+end

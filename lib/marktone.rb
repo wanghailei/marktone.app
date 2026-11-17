@@ -13,6 +13,7 @@ module Marktone
 	DOWNLOAD_PAGE = "https://marktone.app/download/"
 end
 
+require "marktone/feed"
 require "marktone/installer"
 require "marktone/package"
 require "marktone/release"
