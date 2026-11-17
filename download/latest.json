@@ -1,0 +1,11 @@
+{
+	"version": "0.37.3",
+	"notes": "https://github.com/wanghailei/marktone.app/releases/tag/v0.37.3",
+	"assets": {
+		"macos-arm64": {
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.37.3/Marktone-arm64.dmg",
+			"sha256": "95c019d0a58fca29eb4d0de6935a39195be6087fdb6eefa17c872a94e7cf8b17",
+			"size": 12999139
+		}
+	}
+}

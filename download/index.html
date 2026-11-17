@@ -1,0 +1,30 @@
+<!doctype html>
+<!-- Behaviour (by eye): the download page shows the latest version, the macOS download, its checksum and the install steps. -->
+<!-- The download links use /releases/latest/download/, so they need no change when a new version is published; the version line and latest.json do. -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Download Marktone</title>
+	<meta name="description" content="Download the latest version of Marktone, a desktop Markdown editor for macOS and Linux.">
+	<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+	<main>
+		<p><a href="/">Marktone</a></p>
+		<h1>Download Marktone</h1>
+		<p class="muted">Latest version: 0.37.3 · <a href="https://github.com/wanghailei/marktone.app/releases/tag/v0.37.3">Release notes</a></p>
+
+		<h2>macOS (Apple silicon)</h2>
+		<p><a class="button" href="https://github.com/wanghailei/marktone.app/releases/latest/download/Marktone-arm64.dmg">Download for macOS</a></p>
+		<p class="muted">SHA-256 checksum: <a href="https://github.com/wanghailei/marktone.app/releases/latest/download/Marktone-arm64.dmg.sha256">Marktone-arm64.dmg.sha256</a></p>
+
+		<h2>Install</h2>
+		<ol>
+			<li>Open the downloaded <code>.dmg</code>.</li>
+			<li>Drag Marktone into Applications.</li>
+			<li>The first time you open it, right-click Marktone in Applications, choose <strong>Open</strong>, and confirm. Marktone is not notarised by Apple, so macOS refuses a plain double-click the first time.</li>
+		</ol>
+	</main>
+</body>
+</html>
