@@ -1,23 +1,8 @@
-#!/usr/bin/env ruby
-# Runs every test and measures how much of lib/ they run, with Ruby's own Coverage, so the site needs no gem. Carson runs it before
-# landing, and the publishing workflow runs it before it publishes anything.
+#!/bin/sh
+# Runs every test with Node's own test runner and measures how much of lib/ they run, so the site needs no package. Carson runs it before
+# landing, and the publishing workflow runs it before it publishes anything. It needs Node 22.8 or later, for the coverage threshold.
 #
 # Usage: bin/check
-# Exit codes: 0 when every test passes and lib/ is at least MINIMUM_COVERAGE covered; 1 otherwise.
-require "coverage"
-
-MINIMUM_COVERAGE = 90.0
-root = File.expand_path( "..", __dir__ )
-library = File.join( root, "lib" )
-
-Coverage.start
-require "minitest"
-# Reports coverage once Minitest has run the tests at exit; a shortfall turns a passing run into a failing one.
-Minitest.after_run do
-	lines = Coverage.result.select do |path, _| path.start_with?( library ) end.values.flat_map do it end.compact
-	covered = lines.empty? ? 0.0 : 100.0 * lines.count( &:positive? ) / lines.size
-	puts format( "lib/ is %.1f%% covered by the tests (at least %.0f%% is required).", covered, MINIMUM_COVERAGE )
-	exit 1 if covered < MINIMUM_COVERAGE
-end
-Dir.glob( File.join( root, "test/**/*_test.rb" ) ).each do require it end
-
+# Exit codes: 0 when every test passes and lib/ is at least 90% covered by lines; 1 otherwise.
+cd "$( dirname "$0" )/.." || exit 1
+exec node --test --experimental-test-coverage --test-coverage-include='lib/**' --test-coverage-lines=90 test/*.test.mjs

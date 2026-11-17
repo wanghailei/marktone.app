@@ -22,10 +22,8 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
+      # GitHub's runner already has Node 22, which the job and its tests need; nothing is installed.
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: "4.0"
       - name: Test
         run: bin/check
       - name: Publish the release
@@ -36,11 +34,11 @@ jobs:
       # A push made with the workflow's own token may not start a Pages build, so one is asked for.
       - name: Update the site
         run: |
-          git add download
+          git add index.html download
           if git diff --cached --quiet; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "Publish Marktone $(ruby -rjson -e 'print JSON.parse(File.read("download/latest.json"))["version"]') on marktone.app"
+          git commit -m "Publish Marktone $(node -p 'require("./download/latest.json").version') on marktone.app"
           git push
           gh api -X POST "repos/${{ github.repository }}/pages/builds"
         env:
