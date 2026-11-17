@@ -59,6 +59,18 @@
 		by one click. */
 	pre { margin-bottom: var( --marktone-space ); padding-left: 2ch; white-space: pre-wrap; overflow-wrap: anywhere; }
 	pre code { user-select: all; -webkit-user-select: all; }
+	/* The line and its copy button side by side: the line takes the width and wraps, the button keeps its place at the right end of
+		the line's first row, so nothing scrolls sideways on a phone. */
+	.command { display: flex; align-items: flex-start; gap: 1ch; margin-bottom: var( --marktone-space ); }
+	.command pre { flex: 1; min-width: 0; margin-bottom: 0; }
+	/* The copy button is a drawn icon in the text's own colour, with no box, muted until it is pointed at or reached by keyboard. */
+	.copy:not( [hidden] ) { display: inline-flex; }
+	.copy { flex: none; padding: 0.2em; border: 0; background: none; color: inherit; opacity: 0.6; cursor: pointer; line-height: 0; }
+	.copy:hover, .copy:focus-visible, .copy.copied { opacity: 1; }
+	.copy:focus-visible { outline: 1px solid currentColor; outline-offset: 2px; }
+	.copy svg { width: 1.2em; height: 1.2em; fill: none; stroke: currentColor; stroke-width: 1.2; }
+	.copy .copy-done, .copy.copied .copy-sheets { display: none; }
+	.copy.copied .copy-done { display: block; }
 	/* Links are underlined thinly, so a download reads as one at a glance on a page of one colour. */
 	a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
 	a:hover { text-decoration-thickness: 2px; }

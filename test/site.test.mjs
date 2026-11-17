@@ -154,3 +154,16 @@ test( "When the site is rendered, both pages show Linux's install line and then 
 		}
 	} )
 } )
+
+test( "When the site is rendered, each Linux line has a labelled copy button, hidden until the page's script shows it", () => {
+	withinFolder( ( folder ) => {
+		siteWithFeed( folder, { version: "0.42.0" } ).render()
+
+		for( const page of [ "index.html", "download/index.html" ] ) {
+			const text = readFileSync( join( folder, page ), "utf8" )
+			assert.match( text, /<pre><code>curl -fsSL https:\/\/marktone\.app\/install\.sh \| sh<\/code><\/pre>\s*<button type="button" class="copy" aria-label="Copy the install line" hidden>/, page )
+			assert.match( text, /<pre><code>curl -fsSL https:\/\/marktone\.app\/uninstall\.sh \| sh<\/code><\/pre>\s*<button type="button" class="copy" aria-label="Copy the uninstall line" hidden>/, page )
+			assert.ok( text.includes( "<script src=\"/copy.js\" defer></script>" ), page )
+		}
+	} )
+} )
