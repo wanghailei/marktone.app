@@ -1,27 +1,27 @@
 {
-	"version": "0.46.3",
+	"version": "0.50.0",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in 0.46.3**\n- **Check for updates in Settings.** Settings has a Version section showing the version you are running and its date, with a Check for updates button. When a newer Marktone is out, it says which: on Linux a Download button opens the download page, and on a Mac an Install button installs it.\n\n**Since 0.45.3**\n- Check for Updates reads marktone.app, so it finds new versions without a login.\n- Up and Down into a row off the page keep the caret's column.",
+	"changes": "**New in 0.50.0**\n- **A tool bar over selected text.** Select text and four buttons appear above it: Highlight, Bold, Italic and Strikethrough. A mark already on the selection is shown pressed; click it again to take it off.\n- **Strikethrough.** `~~text~~` is drawn struck through, with Ctrl+Shift+` on a Mac and Alt+Shift+5 on Linux.\n- **Settings and Help moved to the sidebar's foot.** The File icon is now second from the left. With no folder open the sidebar still opens and offers Open Folder…. The File menu ends with Settings… and Help. Help no longer has F1.\n- **A new window shows its tool row for 2 seconds,** and the row eases in and out.\n- **Zoom is each window's own.** Zooming one window leaves the others as they are.\n\n**Since 0.46.3**\n- Groundwork for a Windows version: nothing to see yet.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-arm64.dmg",
-			"sha256": "905377a7a23fe2ad042956b3bd9154c907709a60976bff1ee7446b90f34df9eb",
-			"size": 13024088
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.50.0/Marktone-arm64.dmg",
+			"sha256": "04879e8feb64b6e284aaa46211a352a5ca76061f43371fd48541a1e94de3073a",
+			"size": 13045097
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.AppImage",
-			"sha256": "cf54491cc28163443e50c5bf95802c941e8e4c606d02b74420740ae31dc4edd3",
-			"size": 21051896
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.50.0/Marktone-x86_64.AppImage",
+			"sha256": "a5fb1a3c97f47813e8c283f7f2f44f2079d22177824398489f20cefd7a2b1532",
+			"size": 21092856
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-amd64.deb",
-			"sha256": "53dffd4165c53ff4326432e360407f0ad0ceca72ea9d19ad48636f4924a1c5e8",
-			"size": 22113050
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.50.0/Marktone-amd64.deb",
+			"sha256": "7943cbc0ec7ccf587f7cef508929996e4251e9ff664e90db2dff4b7313c7e0ba",
+			"size": 22187926
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.46.3/Marktone-x86_64.tar.gz",
-			"sha256": "f2c66c3785eff81e1c6b88f96bfa20c6f257463dde8c7512194951e6a79fa684",
-			"size": 22138354
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.50.0/Marktone-x86_64.tar.gz",
+			"sha256": "82515be5c9c862091f3b8691b1dd00fa8b0b3e78cb06d5e7425d81883f969368",
+			"size": 22222061
 		}
 	}
 }
