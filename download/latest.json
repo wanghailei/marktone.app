@@ -1,27 +1,27 @@
 {
-	"version": "0.51.0",
+	"version": "0.52.6",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in 0.51.0**\n- **Find your version on a Mac.** Choose **Marktone → About Marktone** from the menu bar to see the version you’re running. It’s the number to include when you report a problem.",
+	"changes": "**New in 0.52.6**",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.51.0/Marktone-arm64.dmg",
-			"sha256": "10903696da115749c8f193f2fdd45e4fac80f3e611260f56a887c82733537911",
-			"size": 13042296
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-arm64.dmg",
+			"sha256": "96b5112cd7115ff7d9bbdbea04eb1f58ae8342b83fa4691ebc5ec297e3a1975c",
+			"size": 13928960
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.51.0/Marktone-x86_64.AppImage",
-			"sha256": "0ead48fd8728c57daae8dc999ea7c5000feefbb97dc3f5ef6752f443ae74396a",
-			"size": 21092856
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-x86_64.AppImage",
+			"sha256": "c180834d94afb0db7a31c4f8457b099f9d7abad5e26ee994b009ae885abbadfb",
+			"size": 21109240
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.51.0/Marktone-amd64.deb",
-			"sha256": "4edaf081dd924c39a83b75236ee2dc4c3c0f185529aaa9c0ffab64f92eb57573",
-			"size": 22175970
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-amd64.deb",
+			"sha256": "d4e59225f30aeebcb3be0ad5c17201413529afe4ff593d4632b5a967da255049",
+			"size": 22209058
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.51.0/Marktone-x86_64.tar.gz",
-			"sha256": "8c77de787f563ecf25f49845e14b905487695e853465ceed6575a73ba428acb2",
-			"size": 22203026
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-x86_64.tar.gz",
+			"sha256": "a333c4018cdd91f68fa76fb975ae8f029391e9caabe86a708ce786116e629419",
+			"size": 22237875
 		}
 	}
 }
