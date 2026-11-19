@@ -1,27 +1,27 @@
 {
-	"version": "0.52.6",
+	"version": "0.52.8",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in 0.52.6**",
+	"changes": "**New in 0.52.8**\n- **See your highlights while text is selected.** In Read mode, highlighted text keeps its yellow background. A thin outline shows which highlighted text you’ve selected, so you can see both the highlight and the selection at once.\n- **Keep the caret visible while editing a divider.** The caret stays at body-text height when you edit a Markdown divider (`---`). When you move the caret away, the divider displays as a line again.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-arm64.dmg",
-			"sha256": "96b5112cd7115ff7d9bbdbea04eb1f58ae8342b83fa4691ebc5ec297e3a1975c",
-			"size": 13928960
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.8/Marktone-arm64.dmg",
+			"sha256": "cf56f013c377ac10c14d304cfc426eb8e9e825095c892966f28f46e2e090c4fc",
+			"size": 13953911
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-x86_64.AppImage",
-			"sha256": "c180834d94afb0db7a31c4f8457b099f9d7abad5e26ee994b009ae885abbadfb",
-			"size": 21109240
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.8/Marktone-x86_64.AppImage",
+			"sha256": "360062ee7ae8fd0c24024b169ddf752ec2d6ca8903042b1b78aadb3ae0e6c750",
+			"size": 21092856
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-amd64.deb",
-			"sha256": "d4e59225f30aeebcb3be0ad5c17201413529afe4ff593d4632b5a967da255049",
-			"size": 22209058
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.8/Marktone-amd64.deb",
+			"sha256": "4fdd91c5cabaf119cca3f2de520e245f07915be84ef3b010b974cf747868d8d8",
+			"size": 22211614
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.6/Marktone-x86_64.tar.gz",
-			"sha256": "a333c4018cdd91f68fa76fb975ae8f029391e9caabe86a708ce786116e629419",
-			"size": 22237875
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.52.8/Marktone-x86_64.tar.gz",
+			"sha256": "8ec4b440152a5c8334072edf580452d82c2bce850b38fef094c42c63b886ec2e",
+			"size": 22243428
 		}
 	}
 }
