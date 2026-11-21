@@ -1,27 +1,27 @@
 {
-	"version": "0.56.3",
+	"version": "0.56.7",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New since 0.54.1**\n- **Find window controls around the document.** The top row holds File, zoom, Read or Edit, and the panel toggles. The bottom row holds About, Help, theme, version, Update and Settings. The folder sidebar opens independently in folder windows, and both side panels match the document in Day and Night. The moon and sun show the appearance you will switch to.\n- **Find file commands and shortcuts more easily.** The File popover offers Open File, Open Folder, Save, Save As, Export as HTML and Export as PDF. Control tips show their shortcuts where available and stay clear of panel titles and notices. The About popover shows the running version alongside `marktone.app` and `whl.ltd`.\n- **Check for updates with one click.** The Update icon downloads and verifies a newer package. The version label changes when the package is ready to install. An up-to-date result or a failed check or download shows a notice for four seconds.\n- **Fine-tune document font weight in Settings.** The variable-font slider lets you choose intermediate weights. Bold and italic text stay rendered while Settings has focus.\n- **Fill and restore a Mac window from its title bar.** Double-click the blank title area to use the action set in macOS.\n- **Keep working through temporary picture download failures.** Marktone retries twice in the background when opening, typing or pasting a remote picture. If the retries run out, it keeps the original address or pasted text and explains the failure. Local picture paths you write by hand are preserved.",
+	"changes": "**New since 0.56.3**\n- **Find controls at the edge of the document.** Move the pointer into the top or bottom row to reveal its controls independently. Zoom, theme and Read or Edit are grouped above the document. Update messages stay centred at the bottom even when the controls fade.\n- **Open and resize side panels.** The folder sidebar, Outline and Settings have separate toggles. Outline and Settings share the right side. Panels keep their allocated width as they slide and can be resized from 300 to 480 px. The window minimum is 980 px and both panels fit from 1,280 px.\n- **Fill and resize Mac document windows from the title bar.** Documents open in the display's usable area. Double-click the blank title area to switch to a centred window at 70% of the usable width and height, within the minimum window size. Double-click again to fill the available area.\n- **Read with consistent spacing.** The default text column is 800 px at Actual Size. The paragraph line height defaults to 160% of the body font size in Day and Night.\n- **See where typing will begin.** A new blank document opens with a blinking insertion point in the theme's accent colour. Click the editable text or a blank line to place the caret.\n- **Find and adjust Settings more easily.** The Interface font setting names what it changes. Controls have at least 160 px of width, with 40 px of space before them and at the right edge. Controls move below their descriptions when needed and have corner radii of at most 2 px. Slider values appear only while dragging. The bottom row now holds the version and update controls.\n- **Update and pick up where you left off.** On installations Marktone can update, one click on Update saves open documents, verifies and installs the download, then restarts and reopens saved documents. If a document cannot be saved, Marktone pauses the install or restart.\n- **Find About information in Help.** The read-only Help window now starts with the app logo, version and website links, followed by the command and shortcut reference.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-arm64.dmg",
-			"sha256": "80850397d28741c1ed8f43bb627c177cb28c3a3ef8f16ca0b8f6d3363cc6a46c",
-			"size": 19341862
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.7/Marktone-arm64.dmg",
+			"sha256": "4d63e485dead5afe639915a7eb98a138bcf1a61706ccfc3affe59c84758955d1",
+			"size": 19352909
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-x86_64.AppImage",
-			"sha256": "f8a7ede95806c86dd2e1c6be69c66efc2978e9085d1a764c4afe0daef46f605b",
-			"size": 26180088
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.7/Marktone-x86_64.AppImage",
+			"sha256": "7e9cac7d12adce828790d02cf126342e6329224c1143211bc0b4a79e365e2e34",
+			"size": 26204664
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-amd64.deb",
-			"sha256": "9c8d1c86475dcf1117f40eb47337db17d627d714e61bde2ab6991d79d28270ca",
-			"size": 27673788
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.7/Marktone-amd64.deb",
+			"sha256": "6119cdc39fb07e35def607a7eb69fe51926c002804f8cc417203ffddb1884dd4",
+			"size": 27702024
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-x86_64.tar.gz",
-			"sha256": "c63433070e6d65e1961a7231bf1b0b496b4cc26a7c3059d7b5730e0b354c59b1",
-			"size": 27677367
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.7/Marktone-x86_64.tar.gz",
+			"sha256": "fab7ca3a5391cc229e607844fda2274419c2922612c417b988d7cf62f698325a",
+			"size": 27699381
 		}
 	}
 }
