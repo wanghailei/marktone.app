@@ -1,27 +1,27 @@
 {
-	"version": "0.54.1",
+	"version": "0.56.3",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New since 0.52.8**\n- **Install Linux updates from Settings.** Once you have 0.54.1, choose **Check for Updates**, then **Install** and **Restart** when an update is offered. This works with AppImage, Debian and portable tar installations. Download 0.54.1 from the website to upgrade from 0.52.8.\n- **Choose Ioskeley Mono in Settings.** The font is bundled, so you can try it without a separate installation. Your existing font choice is preserved.\n- **Write punctuation exactly as you want it to appear.** Type `\\*literal\\*` to display `*literal*` in your document and its outline. Copying and saving preserve the Markdown escapes, and code keeps its literal backslashes.\n- **Work more smoothly in long documents.** Long tables need less work to draw as you scroll, and editing ordinary text in a nested list does not reparse the whole list. On macOS, font discovery runs alongside startup work to reduce the wait before a folder window opens.\n- **Read footnote markers more easily.** Badges reserve space in the line, so they stay clear of adjacent text when a line wraps.\n- **Recover from a save error with Save As.** Once your document saves to the new location, the earlier error message clears.",
+	"changes": "**New since 0.54.1**",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.54.1/Marktone-arm64.dmg",
-			"sha256": "bde3f2d6f70558a353f6dff0e37e471cfe7e5318e6e298e61dc4552395ce6541",
-			"size": 19298837
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-arm64.dmg",
+			"sha256": "80850397d28741c1ed8f43bb627c177cb28c3a3ef8f16ca0b8f6d3363cc6a46c",
+			"size": 19341862
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.54.1/Marktone-x86_64.AppImage",
-			"sha256": "18262a5700728e658dee8970d002fa0111881891edf6bae744e6baf8932bab4a",
-			"size": 25496056
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-x86_64.AppImage",
+			"sha256": "f8a7ede95806c86dd2e1c6be69c66efc2978e9085d1a764c4afe0daef46f605b",
+			"size": 26180088
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.54.1/Marktone-amd64.deb",
-			"sha256": "3b3e6343c223e45ab831b23694f4426032a25a8db9b1499bf2d52e81bacb6a59",
-			"size": 27192316
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-amd64.deb",
+			"sha256": "9c8d1c86475dcf1117f40eb47337db17d627d714e61bde2ab6991d79d28270ca",
+			"size": 27673788
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.54.1/Marktone-x86_64.tar.gz",
-			"sha256": "fc6da3c37f2fa5d93ed3989069bf2e9748a7b50a1bbc3af160702f8e9a6022c4",
-			"size": 27184412
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.56.3/Marktone-x86_64.tar.gz",
+			"sha256": "c63433070e6d65e1961a7231bf1b0b496b4cc26a7c3059d7b5730e0b354c59b1",
+			"size": 27677367
 		}
 	}
 }
