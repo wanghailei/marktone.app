@@ -1,10 +1,12 @@
 #!/bin/sh
 # Installs the latest Marktone for Linux on x86-64 in the user's own folders, or updates it: the program in ~/.local/bin, its menu
-# entry in ~/.local/share/applications and its icon in ~/.local/share/icons. It needs no sudo and no FUSE, since it installs the
-# release's tarball rather than its AppImage. It learns the latest version from marktone.app's feed each time it runs, so a new
-# release needs no change here.
+# entry in ~/.local/share/applications and its icon in ~/.local/share/icons, and refreshes that folder's cache so the desktop opens
+# Markdown files with it. It needs no sudo. By default it installs the release's tarball, which needs no FUSE; with --appimage it
+# installs the release's AppImage itself instead, for those who want the AppImage with a menu entry. It learns the latest version
+# from marktone.app's feed each time it runs, so a new release needs no change here.
 #
 # Usage: curl -fsSL https://marktone.app/install.sh | sh
+#        curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage
 # Exit codes: 0 when Marktone is installed; 1 when it is not, with one sentence saying why. A run that fails leaves the folders as
 # they were and removes its temporary folder.
 #
@@ -21,7 +23,12 @@ install_marktone() {
 	if [ "$( uname -s )" != Linux ] || [ "$( uname -m )" != x86_64 ]; then
 		refuse "this installer is for Linux on x86-64, and this machine is $( uname -s ) on $( uname -m ). Download Marktone from https://marktone.app/download/ instead."
 	fi
-	for tool in curl sha256sum tar; do
+	case "$#:$*" in
+		0:) kind=tar; tools="curl sha256sum tar" ;;
+		1:--appimage) kind=appimage; tools="curl sha256sum" ;;
+		*) refuse "the installer takes no argument, or --appimage to install the AppImage. Run it again as curl -fsSL https://marktone.app/install.sh | sh, or with | sh -s -- --appimage." ;;
+	esac
+	for tool in $tools; do
 		command -v "$tool" > /dev/null 2>&1 || refuse "it needs $tool, which this machine does not have. Install $tool with your system's package manager, then run this again."
 	done
 
@@ -32,22 +39,33 @@ install_marktone() {
 	trap 'exit 1' HUP INT TERM
 
 	curl -fsSL "$feed" -o "$temporary/latest.json" || refuse "marktone.app could not be reached to learn the latest version. Check the connection, then run this again."
-	# The feed is JSON on several lines. Joined into one, each value this needs is a quoted string after its key; the Linux tarball's
+	# The feed is JSON on several lines. Joined into one, each value this needs is a quoted string after its key; each Linux package's
 	# object holds no braces of its own.
 	description=$( tr -d '\n' < "$temporary/latest.json" )
 	version=$( value version "$description" )
-	tarball=$( printf '%s' "$description" | sed -n 's/.*"linux-x86_64-tar"[[:space:]]*:[[:space:]]*{\([^}]*\)}.*/\1/p' )
-	[ -n "$tarball" ] || refuse "marktone.app offers no Linux download at the moment. Try again later."
+	asset=$( printf '%s' "$description" | sed -n "s/.*\"linux-x86_64-$kind\"[[:space:]]*:[[:space:]]*{\([^}]*\)}.*/\1/p" )
+	[ -n "$asset" ] || refuse "marktone.app offers no Linux download at the moment. Try again later."
 
-	curl -fsSL "$( value url "$tarball" )" -o "$temporary/marktone.tar.gz" || refuse "the download from marktone.app failed. Check the connection, then run this again."
-	# The checksum is compared before anything in the download is unpacked.
-	[ "$( sha256sum < "$temporary/marktone.tar.gz" | cut -d ' ' -f 1 )" = "$( value sha256 "$tarball" )" ] || refuse "the download does not match the checksum marktone.app publishes, so it was not unpacked."
-	tar -xzf "$temporary/marktone.tar.gz" -C "$temporary"
-	unpacked="$temporary/marktone-$version"
-	[ -f "$unpacked/marktone" ] || refuse "the download from marktone.app holds no Marktone $version."
+	package="$temporary/package"
+	curl -fsSL "$( value url "$asset" )" -o "$package" || refuse "the download from marktone.app failed. Check the connection, then run this again."
+	# The checksum is compared before anything in the download is unpacked or run.
+	[ "$( sha256sum < "$package" | cut -d ' ' -f 1 )" = "$( value sha256 "$asset" )" ] || refuse "the download does not match the checksum marktone.app publishes, so it was not unpacked."
+	# The tarball holds the program with its menu entry and icon beside it. The AppImage is itself the program, and holds its menu
+	# entry and icon at the top of the files it carries, which its own runtime unpacks without FUSE.
+	if [ "$kind" = appimage ]; then
+		chmod 755 "$package"
+		( cd "$temporary" && "$package" --appimage-extract > /dev/null ) || refuse "the AppImage from marktone.app could not be unpacked to find its menu entry and icon."
+		unpacked="$temporary/squashfs-root"
+		program="$package"
+	else
+		tar -xzf "$package" -C "$temporary"
+		unpacked="$temporary/marktone-$version"
+		program="$unpacked/marktone"
+	fi
+	[ -f "$program" ] && [ -f "$unpacked/marktone.desktop" ] && [ -f "$unpacked/marktone.png" ] || refuse "the download from marktone.app holds no Marktone $version."
 
 	mkdir -p "$programs" "$entries" "$icons"
-	cp "$unpacked/marktone" "$programs/.marktone.new"
+	cp "$program" "$programs/.marktone.new"
 	chmod 755 "$programs/.marktone.new"
 	cp "$unpacked/marktone.png" "$icons/.marktone.png.new"
 	# The menu entry names the program and the icon by where they are installed, so the menu starts Marktone and shows its icon even
@@ -57,6 +75,11 @@ install_marktone() {
 	mv -f "$programs/.marktone.new" "$programs/marktone"
 	mv -f "$icons/.marktone.png.new" "$icons/marktone.png"
 	mv -f "$entries/.marktone.desktop.new" "$entries/marktone.desktop"
+	# The desktop finds which program opens Markdown in this folder's cache, not in the menu entries themselves, so without a refresh
+	# Marktone is not offered for Markdown files. A failed refresh leaves Marktone installed, and says so.
+	if command -v update-desktop-database > /dev/null 2>&1 && ! update-desktop-database "$entries"; then
+		printf '%s\n' "Marktone could not refresh the desktop MIME cache in $entries." >&2
+	fi
 
 	echo "Installed Marktone $version in $programs/marktone, with its menu entry and icon."
 	case ":$PATH:" in
@@ -76,4 +99,4 @@ value() {
 	printf '%s' "$2" | sed -n "s/.*\"$1\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\".*/\1/p"
 }
 
-install_marktone
+install_marktone "$@"

@@ -10,7 +10,8 @@
 uninstall_marktone() {
 	set -eu
 	program="$HOME/.local/bin/marktone"
-	entry="$HOME/.local/share/applications/marktone.desktop"
+	entries="$HOME/.local/share/applications"
+	entry="$entries/marktone.desktop"
 	icon="$HOME/.local/share/icons/hicolor/512x512/apps/marktone.png"
 	# Where Marktone keeps its settings and its Help file on Linux, as its settings.rs names them.
 	settings="${XDG_CONFIG_HOME:-$HOME/.config}/marktone"
@@ -21,6 +22,9 @@ uninstall_marktone() {
 		return
 	fi
 	rm -f "$program" "$entry" "$icon"
+	if [ -d "$entries" ] && command -v update-desktop-database > /dev/null 2>&1 && ! update-desktop-database "$entries"; then
+		printf '%s\n' "Marktone could not refresh the desktop MIME cache in $entries." >&2
+	fi
 	echo "Removed Marktone: $program, its menu entry and its icon."
 	echo "Your settings in $settings and the Help file in $help are kept; delete them by hand if you no longer want them. Your Markdown files are not touched."
 }
