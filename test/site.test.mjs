@@ -161,7 +161,7 @@ test( "When the site is rendered, the AppImage gives the installer's line for in
 
 		for( const page of [ "index.html", "download/index.html" ] ) {
 			const text = readFileSync( join( folder, page ), "utf8" )
-			assert.ok( text.includes( "SHA-256</a></span><br>For a portable copy, make the download executable and run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>" ), page )
+			assert.ok( text.includes( "SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>" ), page )
 		}
 	} )
 } )

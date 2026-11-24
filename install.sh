@@ -49,7 +49,7 @@ install_marktone() {
 	package="$temporary/package"
 	curl -fsSL "$( value url "$asset" )" -o "$package" || refuse "the download from marktone.app failed. Check the connection, then run this again."
 	# The checksum is compared before anything in the download is unpacked or run.
-	[ "$( sha256sum < "$package" | cut -d ' ' -f 1 )" = "$( value sha256 "$asset" )" ] || refuse "the download does not match the checksum marktone.app publishes, so it was not unpacked."
+	[ "$( sha256sum < "$package" | cut -d ' ' -f 1 )" = "$( value sha256 "$asset" )" ] || refuse "the download does not match the checksum marktone.app publishes, so it was not unpacked or run."
 	# The tarball holds the program with its menu entry and icon beside it. The AppImage is itself the program, and holds its menu
 	# entry and icon at the top of the files it carries, which its own runtime unpacks without FUSE.
 	if [ "$kind" = appimage ]; then
@@ -94,7 +94,7 @@ refuse() {
 	exit 1
 }
 
-# The string a key holds in a piece of the feed: `value url "$tarball"`.
+# The string a key holds in a piece of the feed: `value url "$asset"`.
 value() {
 	printf '%s' "$2" | sed -n "s/.*\"$1\"[[:space:]]*:[[:space:]]*\"\([^\"]*\)\".*/\1/p"
 }

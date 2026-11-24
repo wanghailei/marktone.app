@@ -31,7 +31,7 @@ function machine( folder, { version = "0.42.0", checksum, tarball = true, withou
 	writeFileSync( join( unpacked, "licences/IBM-Plex-Mono-OFL.txt" ), "licence" )
 	execFileSync( "tar", [ "-czf", join( web, "Marktone-x86_64.tar.gz" ), "-C", join( folder, "build" ), `marktone-${ version }` ] )
 
-	writeFileSync( join( web, "Marktone-x86_64.AppImage" ), `#!/bin/sh\nif [ "$1" = --appimage-extract ]; then\n\tmkdir -p squashfs-root\n\tprintf '%s' '${ DESKTOP }' > squashfs-root/marktone.desktop\n\tprintf '%s' 'appimage icon' > squashfs-root/marktone.png\n\texit 0\nfi\necho "marktone ${ version } from the AppImage"\n` )
+	writeFileSync( join( web, "Marktone-x86_64.AppImage" ), `#!/bin/sh\n: > "${ folder }/appimage-ran"\nif [ "$1" = --appimage-extract ]; then\n\tmkdir -p squashfs-root\n\tprintf '%s' '${ DESKTOP }' > squashfs-root/marktone.desktop\n\tprintf '%s' 'appimage icon' > squashfs-root/marktone.png\n\texit 0\nfi\necho "marktone ${ version } from the AppImage"\n` )
 
 	const digest = ( name ) => existsSync( join( web, name ) ) ? createHash( "sha256" ).update( readFileSync( join( web, name ) ) ).digest( "hex" ) : "0".repeat( 64 )
 	const asset = ( name ) => ( { url: `https://github.com/wanghailei/marktone.app/releases/download/v${ version }/${ name }`, sha256: checksum ?? digest( name ), size: 1 } )
@@ -115,7 +115,7 @@ test( "When the download does not match the feed's checksum, the installer refus
 		const { status, output } = run( "install.sh", box )
 
 		assert.equal( status, 1 )
-		assert.equal( output, "Marktone was not installed: the download does not match the checksum marktone.app publishes, so it was not unpacked.\n" )
+		assert.equal( output, "Marktone was not installed: the download does not match the checksum marktone.app publishes, so it was not unpacked or run.\n" )
 		assert.equal( existsSync( join( box.home, ".local" ) ), false )
 		assert.deepEqual( readdirSync( box.temporary ), [] )
 	} )
@@ -256,8 +256,9 @@ test( "When the AppImage does not match the feed's checksum, the installer run w
 		const { status, output } = run( "install.sh", box, { arguments: [ "--appimage" ] } )
 
 		assert.equal( status, 1 )
-		assert.equal( output, "Marktone was not installed: the download does not match the checksum marktone.app publishes, so it was not unpacked.\n" )
+		assert.equal( output, "Marktone was not installed: the download does not match the checksum marktone.app publishes, so it was not unpacked or run.\n" )
 		assert.equal( existsSync( join( box.home, ".local" ) ), false )
+		assert.equal( existsSync( join( folder, "appimage-ran" ) ), false )
 	} )
 } )
 
