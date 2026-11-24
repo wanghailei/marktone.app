@@ -155,6 +155,17 @@ test( "When the site is rendered, both pages show Linux's install line and then 
 	} )
 } )
 
+test( "When the site is rendered, the AppImage gives the installer's line for installing it with a menu entry and Markdown associations", () => {
+	withinFolder( ( folder ) => {
+		siteWithFeed( folder, { version: "0.42.0" } ).render()
+
+		for( const page of [ "index.html", "download/index.html" ] ) {
+			const text = readFileSync( join( folder, page ), "utf8" )
+			assert.ok( text.includes( "SHA-256</a></span><br>For a portable copy, make the download executable and run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>" ), page )
+		}
+	} )
+} )
+
 test( "When the site is rendered, each Linux line has a labelled copy button, hidden until the page's script shows it", () => {
 	withinFolder( ( folder ) => {
 		siteWithFeed( folder, { version: "0.42.0" } ).render()
