@@ -21,10 +21,37 @@
 
 		<section>
 			<h2>Download</h2>
-			<p class="muted">Version 0.74.9</p>
+			<p class="muted">Version 0.80.0</p>
+			<p><strong>New in Export as PDF</strong></p>
+			<ul>
+				<li><strong>Marktone now makes the PDF itself.</strong> Export as PDF no longer needs a browser or any other program installed: Marktone writes the PDF on its own, so it works on every Mac and Linux machine, and the old prompt offering HTML when no browser was found is gone.</li>
+				<li><strong>Pages as the window draws them.</strong> The PDF is A4 with 2.6 cm margins on all four sides, its body at 9 pt with headings, spacing and pictures in proportion, in the day theme&#39;s look and the font chosen in Settings. Code blocks, quotes, rules, tables, task boxes, footnotes, colour emoji and pictures are drawn as in the window, and a code block&#39;s long lines wrap so nothing is cut off.</li>
+				<li><strong>Wide content turns the page.</strong> When a table cannot fit the page without breaking a word, or a code line is too long for it, the whole PDF is set in A4 landscape. Pictures never turn a page: they are made smaller to fit.</li>
+				<li><strong>Easy to read across pages.</strong> Each page carries its number, small and centred at its foot. A table that runs on to another page repeats its header row there, and a heading is never left alone at a page&#39;s foot.</li>
+				<li><strong>A PDF you can use.</strong> Its bookmarks are the document&#39;s headings. Links open, links to a heading jump to it, and footnotes jump to their text and back. Text can be selected, copied and searched, Chinese included, and local pictures are held inside the file.</li>
+				<li><strong>Safe to export over an old copy.</strong> A failed export leaves no half-written file and keeps the PDF it would have replaced; one that succeeds keeps the old file&#39;s permissions.</li>
+			</ul>
+			<p><strong>New in the window and its panels</strong></p>
+			<ul>
+				<li><strong>The window grows to show a panel.</strong> Opening the sidebar, the outline or Settings in a window too narrow for it grows the window by what the panel lacks, so the text stays where it is on the screen. On the Mac it grows towards the panel&#39;s side; on Linux it grows to its right, and the text moves only as far as the sidebar needs. Closing the panel keeps the new width. A full-screen, maximised or tiled window does not grow and keeps its rules as before.</li>
+				<li><strong>Read or Edit comes before Theme</strong> in the group of icons at the top of the window.</li>
+			</ul>
+			<p><strong>New in tables</strong></p>
+			<ul>
+				<li><strong>Column edges stay still while you edit.</strong> While the caret is in a table, typing in a cell, or a cell showing its Markdown, changes only that cell&#39;s wrapping and its row&#39;s height, never where the columns meet. The columns are shared out again when the caret leaves the table, or at once when a row or column is added or removed.</li>
+			</ul>
+			<p><strong>New in Find and replace</strong></p>
+			<ul>
+				<li><strong>Undo works in the Find bar.</strong> With the caret in the find or the replace field, Cmd+Z (Ctrl+Z on Linux) undoes the field&#39;s typing first, then the document&#39;s edits once the field has nothing left to undo; Shift+Cmd+Z (Ctrl+Y) redoes them in the same order. The Edit menu&#39;s Undo and Redo follow the same route.</li>
+			</ul>
+			<p><strong>New in the app</strong></p>
+			<ul>
+				<li><strong>A new icon:</strong> Marktone&#39;s woven # mark, rounded by macOS as every Mac icon is, and drawn with the same rounded corners for Linux desktops.</li>
+				<li><strong>Third-party licences in one file.</strong> Every package carries <code>licences/THIRD-PARTY-LICENCES.md</code>, listing the licence of every component Marktone is built from.</li>
+			</ul>
 
 			<h3>macOS (Apple silicon)</h3>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">17.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">18.4 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
 			<p>Open the <code>.dmg</code> and drag Marktone into Applications. The first time, right-click Marktone in Applications and choose Open: Marktone is not notarised by Apple, so macOS refuses a plain double-click.</p>
 
 			<h3>Linux (x86-64)</h3>
@@ -39,9 +66,9 @@
 				<button type="button" class="copy" aria-label="Copy the uninstall line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg><span class="copy-hint" aria-hidden="true"></span></button>
 			</div>
 			<p>Or download a package:</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">22.4 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">23.6 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">23.5 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">23.9 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">25.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">25.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
 		</section>
 
 		<section>

@@ -1,27 +1,27 @@
 {
-	"version": "0.74.9",
+	"version": "0.80.0",
 	"notes": "https://marktone.app/download/",
-	"changes": "",
+	"changes": "**New in Export as PDF**\n- **Marktone now makes the PDF itself.** Export as PDF no longer needs a browser or any other program installed: Marktone writes the PDF on its own, so it works on every Mac and Linux machine, and the old prompt offering HTML when no browser was found is gone.\n- **Pages as the window draws them.** The PDF is A4 with 2.6 cm margins on all four sides, its body at 9 pt with headings, spacing and pictures in proportion, in the day theme's look and the font chosen in Settings. Code blocks, quotes, rules, tables, task boxes, footnotes, colour emoji and pictures are drawn as in the window, and a code block's long lines wrap so nothing is cut off.\n- **Wide content turns the page.** When a table cannot fit the page without breaking a word, or a code line is too long for it, the whole PDF is set in A4 landscape. Pictures never turn a page: they are made smaller to fit.\n- **Easy to read across pages.** Each page carries its number, small and centred at its foot. A table that runs on to another page repeats its header row there, and a heading is never left alone at a page's foot.\n- **A PDF you can use.** Its bookmarks are the document's headings. Links open, links to a heading jump to it, and footnotes jump to their text and back. Text can be selected, copied and searched, Chinese included, and local pictures are held inside the file.\n- **Safe to export over an old copy.** A failed export leaves no half-written file and keeps the PDF it would have replaced; one that succeeds keeps the old file's permissions.\n\n**New in the window and its panels**\n- **The window grows to show a panel.** Opening the sidebar, the outline or Settings in a window too narrow for it grows the window by what the panel lacks, so the text stays where it is on the screen. On the Mac it grows towards the panel's side; on Linux it grows to its right, and the text moves only as far as the sidebar needs. Closing the panel keeps the new width. A full-screen, maximised or tiled window does not grow and keeps its rules as before.\n- **Read or Edit comes before Theme** in the group of icons at the top of the window.\n\n**New in tables**\n- **Column edges stay still while you edit.** While the caret is in a table, typing in a cell, or a cell showing its Markdown, changes only that cell's wrapping and its row's height, never where the columns meet. The columns are shared out again when the caret leaves the table, or at once when a row or column is added or removed.\n\n**New in Find and replace**\n- **Undo works in the Find bar.** With the caret in the find or the replace field, Cmd+Z (Ctrl+Z on Linux) undoes the field's typing first, then the document's edits once the field has nothing left to undo; Shift+Cmd+Z (Ctrl+Y) redoes them in the same order. The Edit menu's Undo and Redo follow the same route.\n\n**New in the app**\n- **A new icon:** Marktone's woven # mark, rounded by macOS as every Mac icon is, and drawn with the same rounded corners for Linux desktops.\n- **Third-party licences in one file.** Every package carries `licences/THIRD-PARTY-LICENCES.md`, listing the licence of every component Marktone is built from.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-arm64.dmg",
-			"sha256": "4b72aa8989ac794db0c025b850a690bcc6553d3e5fa34824827ed82bf6d61e0e",
-			"size": 16995764
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-arm64.dmg",
+			"sha256": "4262fcc283560d8085c07207dfb3373a555b339b520ad8a9874b48afb2119bbb",
+			"size": 18405507
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.AppImage",
-			"sha256": "67b749b18d35567ea836eeb17b90bef689dfa6216a1788a0c6b888330bbe1788",
-			"size": 22391288
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.AppImage",
+			"sha256": "bcf6743e02d435aba79dc0127f00ee953d4c0d768318d96fcbb41478a94654d9",
+			"size": 23902712
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-amd64.deb",
-			"sha256": "f66b76f67e3f6acc63e764b86a6feb2fc963405fecf2115f8b6418e3efa6c34d",
-			"size": 23566144
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-amd64.deb",
+			"sha256": "4980b2968ecd771b04ebb4e9a2c4effb1d4857ca2b2b224e5959b145af2550fb",
+			"size": 25204724
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.74.9/Marktone-x86_64.tar.gz",
-			"sha256": "5903a92c9b90a7b5e0186ae08e885ef67da981a63f7cf5c4773c2db49ba05c73",
-			"size": 23546321
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.tar.gz",
+			"sha256": "1dc2bd3bf2ec9b1564f85b76ab221cf92e7b9a4a3cb90f75dba423695ddc1728",
+			"size": 25174765
 		}
 	}
 }
