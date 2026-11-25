@@ -1,7 +1,7 @@
 {
 	"version": "0.86.1",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in the window and its icons**\n- **Read or Edit now stands before Insert Skeleton.** The icons at the top of the window read Zoom Out, Actual Size, Zoom In, Read or Edit, Insert Skeleton; the two have changed places.",
+	"changes": "**New in Help**\n- **Help opens again after updating.** In 0.85.4, clicking the Help icon could show \"Marktone cannot save … Help.md: the bundled logo's name is already in use\" and open no Help, when an earlier version of Marktone had left its logo in Help's own folder. Help now opens whatever an earlier version left there.\n\n**New in the window and its icons**\n- **Read or Edit now stands before Insert Skeleton.** The icons at the top of the window read Zoom Out, Actual Size, Zoom In, Read or Edit, Insert Skeleton; the two have changed places.",
 	"assets": {
 		"macos-arm64": {
 			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-arm64.dmg",
