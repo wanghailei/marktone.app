@@ -1,27 +1,27 @@
 {
-	"version": "0.85.4",
+	"version": "0.86.1",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in writing**\n- **Empty lines in lists and quotes keep their space.** An empty line inside a list item or a quote is now drawn as an empty paragraph of that item or quote, so nothing below it moves when the caret arrives on it or leaves it.\n- **Blank lines between list items are lines you can write on.** The caret rests on each of them, Up and Down stop there, and you can type there. Backspace, Delete and Enter on such a line take away or add one line.\n- **Text typed on an empty line in a list item stays in that item.** It no longer leaves the list and cuts the item in two; in a quote it stays in the quote.\n- **An emptied paragraph keeps its line.** When you delete all the text of a paragraph that stands between two headings or other blocks, its line stays as an empty paragraph, and the text below no longer jumps up.\n- **Spaces at the start of a line are shown as typed.** A paragraph's leading spaces and tabs are drawn where you typed them, in Edit and in Read, and the caret stays after them. HTML and PDF exports show them as the window does.\n- **Four spaces never make a code block.** A line that starts with four or more spaces, or with a tab, stays the text it was; code blocks come only from fences. A file written elsewhere with an indented code block opens as indented text.\n\n**New in Help**\n- **Choose Help's language.** A language icon at the top of Help's window lists English, 简体中文, 繁體中文 and 日本語. Pick one and Help is redrawn in it at once, and opens in it from then on; pick the row marked System to follow your system again.\n- **Skeletons in Help's language.** Insert Skeleton writes the placeholder words of its skeletons, such as Title, Section and Item, in the language Help is shown in. The Markdown marks stay the same.\n\n**New in the Linux packages**\n- **The Linux packages now need Ubuntu 24.04 or newer (glibc 2.39); 0.83.8's were built for Ubuntu 22.04.**\n- They run on Ubuntu 24.04 and 26.04, Debian 13, Arch and Omarchy, and not on older systems such as Ubuntu 22.04 or Debian 12.",
+	"changes": "**New in the window and its icons**\n- **Read or Edit now stands before Insert Skeleton.** The icons at the top of the window read Zoom Out, Actual Size, Zoom In, Read or Edit, Insert Skeleton; the two have changed places.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-arm64.dmg",
-			"sha256": "c0d4b4816644de740364f3dac953e545e7ef074c05d49e0064941c1530ddb1bf",
-			"size": 18461489
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-arm64.dmg",
+			"sha256": "3f769a745b641d938b48cb0743d163dc4a16868b139f4894b11bfd82145e327c",
+			"size": 18453700
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.AppImage",
-			"sha256": "4c3b939a8ddae208266a83f8eb3195045ff3fb5263d62fed302108185148b15b",
-			"size": 23624184
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-x86_64.AppImage",
+			"sha256": "ad851a5064668df1628c3c27cbe2d010e665151e827682d039e81f332cf2c517",
+			"size": 23628280
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-amd64.deb",
-			"sha256": "0554b62863daf244c4413d698a1de7ee2da78f008e64b3eb61e1d917eabfbc0b",
-			"size": 24834574
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-amd64.deb",
+			"sha256": "ec31c9678f0390a299d12571783e1abd4c260cf5b08c2676c679fb106ba5b527",
+			"size": 24844414
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.tar.gz",
-			"sha256": "1c55d8eba0220349444b756240c2912b4da6e19739c58944489d9c2b224cee9c",
-			"size": 24809305
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-x86_64.tar.gz",
+			"sha256": "490f71102f2eef7599ea737ced8f5825b04a14b223598688797a03d09331f442",
+			"size": 24822220
 		}
 	}
 }
