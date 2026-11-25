@@ -1,27 +1,27 @@
 {
-	"version": "0.87.2",
+	"version": "0.87.4",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in Updates**\n- **The Update icon turns the right way.** While an update runs, the Update icon now turns the way its arrows point; in 0.87.0 it turned the wrong way.\n\n**New in Settings**\n- **The Font family list floats.** An open Font family list now floats over the settings below it, where before it pushed them down, so no setting moves.\n- **Each line is as wide as the list.** A click anywhere on a family's line chooses it, and its highlight spans the list.\n- **A click outside closes the list.**",
+	"changes": "**New in Editing**\n- **One Enter, one line.** One press of Enter now moves the caret and the text below by exactly one line, where it moved two: above several empty lines, at the start of a paragraph, and when pressed repeatedly inside a paragraph.\n- **No extra empty line at a line break.** Enter at a line break inside a paragraph no longer leaves an extra empty line.\n\n**New in Settings**\n- **A click over the hidden part of the Font family list closes it.** When Settings have scrolled part of an open Font family list out of view, a click over that part now closes the list.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.2/Marktone-arm64.dmg",
-			"sha256": "153dbcbe763f5d76817b784bb2fcd7dfd33984dbc2caac5b6d58a42e7877d065",
-			"size": 18489439
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-arm64.dmg",
+			"sha256": "ee04816722e1c6637cb6ff8d2c6ca422f8435463afaf190391facbe8cdf4447f",
+			"size": 18484074
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.2/Marktone-x86_64.AppImage",
-			"sha256": "1fe20c65722a7d5d1a98fd2003597ef68adbfec697193c52e35d3a17359d457d",
-			"size": 23628280
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-x86_64.AppImage",
+			"sha256": "f77c5e9674d3d63310e979efb56002bcf9ce67cfbd1f6b18cd8e9b24e70c6953",
+			"size": 23640568
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.2/Marktone-amd64.deb",
-			"sha256": "1fff92ab60987eaed891f3eb44d08da079b34345f34f01235f5951e734e250cb",
-			"size": 24858612
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-amd64.deb",
+			"sha256": "acb47131f25be337a51d7531e046f0167d05c4f7af55f72fd0a39c50dce8f5e0",
+			"size": 24865218
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.2/Marktone-x86_64.tar.gz",
-			"sha256": "436ae7817b9072dbcf4ec2b032130a1f0ab4ac98bddfbe3983f5fc44c3393d3c",
-			"size": 24837566
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-x86_64.tar.gz",
+			"sha256": "9c2ec70539a3dd2c8e0ba5482da7af0669d1a4f1e6925ef2fc6ff90eec987c2f",
+			"size": 24845009
 		}
 	}
 }
