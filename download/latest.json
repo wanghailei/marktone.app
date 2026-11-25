@@ -1,27 +1,27 @@
 {
-	"version": "0.80.0",
+	"version": "0.83.8",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in Export as PDF**\n- **Marktone now makes the PDF itself.** Export as PDF no longer needs a browser or any other program installed: Marktone writes the PDF on its own, so it works on every Mac and Linux machine, and the old prompt offering HTML when no browser was found is gone.\n- **Pages as the window draws them.** The PDF is A4 with 2.6 cm margins on all four sides, its body at 9 pt with headings, spacing and pictures in proportion, in the day theme's look and the font chosen in Settings. Code blocks, quotes, rules, tables, task boxes, footnotes, colour emoji and pictures are drawn as in the window, and a code block's long lines wrap so nothing is cut off.\n- **Wide content turns the page.** When a table cannot fit the page without breaking a word, or a code line is too long for it, the whole PDF is set in A4 landscape. Pictures never turn a page: they are made smaller to fit.\n- **Easy to read across pages.** Each page carries its number, small and centred at its foot. A table that runs on to another page repeats its header row there, and a heading is never left alone at a page's foot.\n- **A PDF you can use.** Its bookmarks are the document's headings. Links open, links to a heading jump to it, and footnotes jump to their text and back. Text can be selected, copied and searched, Chinese included, and local pictures are held inside the file.\n- **Safe to export over an old copy.** A failed export leaves no half-written file and keeps the PDF it would have replaced; one that succeeds keeps the old file's permissions.\n\n**New in the window and its panels**\n- **The window grows to show a panel.** Opening the sidebar, the outline or Settings in a window too narrow for it grows the window by what the panel lacks, so the text stays where it is on the screen. On the Mac it grows towards the panel's side; on Linux it grows to its right, and the text moves only as far as the sidebar needs. Closing the panel keeps the new width. A full-screen, maximised or tiled window does not grow and keeps its rules as before.\n- **Read or Edit comes before Theme** in the group of icons at the top of the window.\n\n**New in tables**\n- **Column edges stay still while you edit.** While the caret is in a table, typing in a cell, or a cell showing its Markdown, changes only that cell's wrapping and its row's height, never where the columns meet. The columns are shared out again when the caret leaves the table, or at once when a row or column is added or removed.\n\n**New in Find and replace**\n- **Undo works in the Find bar.** With the caret in the find or the replace field, Cmd+Z (Ctrl+Z on Linux) undoes the field's typing first, then the document's edits once the field has nothing left to undo; Shift+Cmd+Z (Ctrl+Y) redoes them in the same order. The Edit menu's Undo and Redo follow the same route.\n\n**New in the app**\n- **A new icon:** Marktone's woven # mark, rounded by macOS as every Mac icon is, and drawn with the same rounded corners for Linux desktops.\n- **Third-party licences in one file.** Every package carries `licences/THIRD-PARTY-LICENCES.md`, listing the licence of every component Marktone is built from.",
+	"changes": "**New in writing**\n- **Skeletons to start from.** A new Insert Skeleton icon at the top of the window, between Zoom In and Read or Edit, puts a ready-made heading, table, list or task list into the document, ready to fill in. A list skeleton placed beside a list of its kind takes another marker, so it stays a list of its own.\n- **Empty lines stay where you made them.** Each Enter on an empty line, or after the last paragraph, now moves the caret down one more line, and the empty lines keep their space when you start typing: the text no longer jumps back up under the paragraph before it. Up and Down stop on the empty lines too.\n- **Spaces and the caret on empty lines.** Spaces typed on an empty line stay with the text you type after them, the caret is drawn on that line after a space, and Backspace after typing on an empty line leaves the document exactly as it was before.\n\n**New in the look**\n- **Everything on the 8 px step.** Every space between blocks, and every row, field and gap in the window, is now a multiple of 8 px at Actual Size: 16 px around paragraphs, lists and tables, 8 px between list items, 24 px around quotes, 32 px rows in menus and the side panels. Line heights stay a ratio of the font size, as before.\n- **A smaller default size.** The document's text is 13 px by default, where it was 14.\n- **The text runs down to the foot of the window.** The document's last line now stands just above the bottom row of icons, not 80 px above it.\n- **Nested files and headings sit closer.** Each level of the file list and the outline steps 24 px in, where it stepped 40.\n- **The find bar is compact.** Find and replace sit in one bar 600 px wide, centred over the text, instead of spreading across the whole window.\n- **Chinese and Japanese in their own fonts.** Japanese, Traditional Chinese, Simplified Chinese and Korean are each drawn in the font your system uses for that language, as the system's own apps draw them, where before all of them were drawn in a Simplified Chinese font.\n\n**New in the window and its icons**\n- **The icons are always shown.** The rows of icons at the top and bottom of the window are visible from the start, without hovering over them. Turn on Auto-hide toolbar in Settings to have them fade until you move to them.\n- **Theme and Help move to the bottom row,** making room for Insert Skeleton at the top.\n\n**New in Help**\n- **Help in four languages.** Help is written in British English, Simplified Chinese, Traditional Chinese and Japanese, and opens in the first of your system's languages it is written in, else in British English. Its examples are translated too; commands, shortcuts and skeleton names stay in English.\n- **Templates in every section.** Each how-to section of Help carries a skeleton you can copy, and shortcuts are shown as code.\n\n**New in the app**\n- **A new icon:** the Dark Back logo, two gold bars across a black square, crossed by two slanted gold strokes. Help's About page shows it too.\n- **British English throughout.** The interface is written in British English, such as Window → Minimise.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-arm64.dmg",
-			"sha256": "4262fcc283560d8085c07207dfb3373a555b339b520ad8a9874b48afb2119bbb",
-			"size": 18405507
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-arm64.dmg",
+			"sha256": "b3b4d0ca0e7a2bcccf6688471a6634cafb35e4df10e8af67905b205bd9772871",
+			"size": 18463146
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.AppImage",
-			"sha256": "bcf6743e02d435aba79dc0127f00ee953d4c0d768318d96fcbb41478a94654d9",
-			"size": 23902712
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.AppImage",
+			"sha256": "a272e86a84b56ff9db5e0c79e10bb538b67898e66365cfad4c1dfb9ee5a958ec",
+			"size": 23943672
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-amd64.deb",
-			"sha256": "4980b2968ecd771b04ebb4e9a2c4effb1d4857ca2b2b224e5959b145af2550fb",
-			"size": 25204724
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-amd64.deb",
+			"sha256": "4d8d75f87d39f6c8caa4be1b2bcb04691d3daa702d9cd2819ec357ca98f3f024",
+			"size": 25224030
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.80.0/Marktone-x86_64.tar.gz",
-			"sha256": "1dc2bd3bf2ec9b1564f85b76ab221cf92e7b9a4a3cb90f75dba423695ddc1728",
-			"size": 25174765
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.tar.gz",
+			"sha256": "c2340f6f9707e43e9711d8a27067788f69b6e9ff346f831a2192e077906ba20a",
+			"size": 25206063
 		}
 	}
 }
