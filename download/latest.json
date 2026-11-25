@@ -1,27 +1,27 @@
 {
-	"version": "0.86.1",
+	"version": "0.87.0",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in Help**\n- **Help opens again after updating.** In 0.85.4, clicking the Help icon could show \"Marktone cannot save … Help.md: the bundled logo's name is already in use\" and open no Help, when an earlier version of Marktone had left its logo in Help's own folder. Help now opens whatever an earlier version left there.\n\n**New in the window and its icons**\n- **Read or Edit now stands before Insert Skeleton.** The icons at the top of the window read Zoom Out, Actual Size, Zoom In, Read or Edit, Insert Skeleton; the two have changed places.",
+	"changes": "**New in updating**\n- **Update shows what it is doing.** When you click the Update icon, the icon turns and the line beside it says each step: \"Checking…\", \"Downloading x.y.z…\", \"Installing x.y.z…\", \"Restarting…\". The version returns to that line afterwards.\n- **An update held back by an unsaved document says so.** When an update is not installed because a document is unsaved, Marktone now says so even in the window whose save failed.\n\n**New in the window and its icons**\n- **One line for every message.** Everything Marktone has to tell you now shows on the one line beside the Update icon, at the right of the bottom row. Nothing is shown in the centre of that row any more.\n- **A failure stands out.** A message about something that failed is drawn in the accent colour, maroon by day and khaki by night; anything else is in the text colour.\n- **\"Cannot save\" stays until the document is saved.** The message no longer goes away by itself while the document is still unsaved.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-arm64.dmg",
-			"sha256": "3f769a745b641d938b48cb0743d163dc4a16868b139f4894b11bfd82145e327c",
-			"size": 18453700
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.0/Marktone-arm64.dmg",
+			"sha256": "d868d589dd0a9f183723f793ea4ca53e5feb0df316fd9a184ce0bf019e92c4bd",
+			"size": 18482745
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-x86_64.AppImage",
-			"sha256": "ad851a5064668df1628c3c27cbe2d010e665151e827682d039e81f332cf2c517",
-			"size": 23628280
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.0/Marktone-x86_64.AppImage",
+			"sha256": "7a94ae5562f5f0db29cf81cfb1482d4d0705594f584a790960af4689220a0b72",
+			"size": 23636472
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-amd64.deb",
-			"sha256": "ec31c9678f0390a299d12571783e1abd4c260cf5b08c2676c679fb106ba5b527",
-			"size": 24844414
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.0/Marktone-amd64.deb",
+			"sha256": "476113ece65f2438857c4cedd3acc16ac2dd23d0341b1084566eddbb70ad2a6e",
+			"size": 24854910
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.86.1/Marktone-x86_64.tar.gz",
-			"sha256": "490f71102f2eef7599ea737ced8f5825b04a14b223598688797a03d09331f442",
-			"size": 24822220
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.0/Marktone-x86_64.tar.gz",
+			"sha256": "efdf28fed407e4bc726654baba46efaa4697fe95c0389306d80ce47e5fd7cb95",
+			"size": 24834682
 		}
 	}
 }
