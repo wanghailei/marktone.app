@@ -1,27 +1,27 @@
 {
-	"version": "0.83.8",
+	"version": "0.85.4",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in writing**\n- **Skeletons to start from.** A new Insert Skeleton icon at the top of the window, between Zoom In and Read or Edit, puts a ready-made heading, table, list or task list into the document, ready to fill in. A list skeleton placed beside a list of its kind takes another marker, so it stays a list of its own.\n- **Empty lines stay where you made them.** Each Enter on an empty line, or after the last paragraph, now moves the caret down one more line, and the empty lines keep their space when you start typing: the text no longer jumps back up under the paragraph before it. Up and Down stop on the empty lines too.\n- **Spaces and the caret on empty lines.** Spaces typed on an empty line stay with the text you type after them, the caret is drawn on that line after a space, and Backspace after typing on an empty line leaves the document exactly as it was before.\n\n**New in the look**\n- **Everything on the 8 px step.** Every space between blocks, and every row, field and gap in the window, is now a multiple of 8 px at Actual Size: 16 px around paragraphs, lists and tables, 8 px between list items, 24 px around quotes, 32 px rows in menus and the side panels. Line heights stay a ratio of the font size, as before.\n- **A smaller default size.** The document's text is 13 px by default, where it was 14.\n- **The text runs down to the foot of the window.** The document's last line now stands just above the bottom row of icons, not 80 px above it.\n- **Nested files and headings sit closer.** Each level of the file list and the outline steps 24 px in, where it stepped 40.\n- **The find bar is compact.** Find and replace sit in one bar 600 px wide, centred over the text, instead of spreading across the whole window.\n- **Chinese and Japanese in their own fonts.** Japanese, Traditional Chinese, Simplified Chinese and Korean are each drawn in the font your system uses for that language, as the system's own apps draw them, where before all of them were drawn in a Simplified Chinese font.\n\n**New in the window and its icons**\n- **The icons are always shown.** The rows of icons at the top and bottom of the window are visible from the start, without hovering over them. Turn on Auto-hide toolbar in Settings to have them fade until you move to them.\n- **Theme and Help move to the bottom row,** making room for Insert Skeleton at the top.\n\n**New in Help**\n- **Help in four languages.** Help is written in British English, Simplified Chinese, Traditional Chinese and Japanese, and opens in the first of your system's languages it is written in, else in British English. Its examples are translated too; commands, shortcuts and skeleton names stay in English.\n- **Templates in every section.** Each how-to section of Help carries a skeleton you can copy, and shortcuts are shown as code.\n\n**New in the app**\n- **A new icon:** the Dark Back logo, two gold bars across a black square, crossed by two slanted gold strokes. Help's About page shows it too.\n- **British English throughout.** The interface is written in British English, such as Window → Minimise.",
+	"changes": "**New in writing**\n- **Empty lines in lists and quotes keep their space.** An empty line inside a list item or a quote is now drawn as an empty paragraph of that item or quote, so nothing below it moves when the caret arrives on it or leaves it.\n- **Blank lines between list items are lines you can write on.** The caret rests on each of them, Up and Down stop there, and you can type there. Backspace, Delete and Enter on such a line take away or add one line.\n- **Text typed on an empty line in a list item stays in that item.** It no longer leaves the list and cuts the item in two; in a quote it stays in the quote.\n- **An emptied paragraph keeps its line.** When you delete all the text of a paragraph that stands between two headings or other blocks, its line stays as an empty paragraph, and the text below no longer jumps up.\n- **Spaces at the start of a line are shown as typed.** A paragraph's leading spaces and tabs are drawn where you typed them, in Edit and in Read, and the caret stays after them. HTML and PDF exports show them as the window does.\n- **Four spaces never make a code block.** A line that starts with four or more spaces, or with a tab, stays the text it was; code blocks come only from fences. A file written elsewhere with an indented code block opens as indented text.\n\n**New in Help**\n- **Choose Help's language.** A language icon at the top of Help's window lists English, 简体中文, 繁體中文 and 日本語. Pick one and Help is redrawn in it at once, and opens in it from then on; pick the row marked System to follow your system again.\n- **Skeletons in Help's language.** Insert Skeleton writes the placeholder words of its skeletons, such as Title, Section and Item, in the language Help is shown in. The Markdown marks stay the same.\n\n**New in the Linux packages**\n- **The Linux packages now need Ubuntu 24.04 or newer (glibc 2.39); 0.83.8's were built for Ubuntu 22.04.**\n- They run on Ubuntu 24.04 and 26.04, Debian 13, Arch and Omarchy, and not on older systems such as Ubuntu 22.04 or Debian 12.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-arm64.dmg",
-			"sha256": "b3b4d0ca0e7a2bcccf6688471a6634cafb35e4df10e8af67905b205bd9772871",
-			"size": 18463146
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-arm64.dmg",
+			"sha256": "c0d4b4816644de740364f3dac953e545e7ef074c05d49e0064941c1530ddb1bf",
+			"size": 18461489
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.AppImage",
-			"sha256": "a272e86a84b56ff9db5e0c79e10bb538b67898e66365cfad4c1dfb9ee5a958ec",
-			"size": 23943672
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.AppImage",
+			"sha256": "4c3b939a8ddae208266a83f8eb3195045ff3fb5263d62fed302108185148b15b",
+			"size": 23624184
 		},
 		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-amd64.deb",
-			"sha256": "4d8d75f87d39f6c8caa4be1b2bcb04691d3daa702d9cd2819ec357ca98f3f024",
-			"size": 25224030
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-amd64.deb",
+			"sha256": "0554b62863daf244c4413d698a1de7ee2da78f008e64b3eb61e1d917eabfbc0b",
+			"size": 24834574
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.tar.gz",
-			"sha256": "c2340f6f9707e43e9711d8a27067788f69b6e9ff346f831a2192e077906ba20a",
-			"size": 25206063
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.tar.gz",
+			"sha256": "1c55d8eba0220349444b756240c2912b4da6e19739c58944489d9c2b224cee9c",
+			"size": 24809305
 		}
 	}
 }

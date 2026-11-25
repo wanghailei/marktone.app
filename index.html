@@ -21,40 +21,29 @@
 
 		<section>
 			<h2>Download</h2>
-			<p class="muted">Version 0.83.8</p>
+			<p class="muted">Version 0.85.4</p>
 			<p><strong>New in writing</strong></p>
 			<ul>
-				<li><strong>Skeletons to start from.</strong> A new Insert Skeleton icon at the top of the window, between Zoom In and Read or Edit, puts a ready-made heading, table, list or task list into the document, ready to fill in. A list skeleton placed beside a list of its kind takes another marker, so it stays a list of its own.</li>
-				<li><strong>Empty lines stay where you made them.</strong> Each Enter on an empty line, or after the last paragraph, now moves the caret down one more line, and the empty lines keep their space when you start typing: the text no longer jumps back up under the paragraph before it. Up and Down stop on the empty lines too.</li>
-				<li><strong>Spaces and the caret on empty lines.</strong> Spaces typed on an empty line stay with the text you type after them, the caret is drawn on that line after a space, and Backspace after typing on an empty line leaves the document exactly as it was before.</li>
-			</ul>
-			<p><strong>New in the look</strong></p>
-			<ul>
-				<li><strong>Everything on the 8 px step.</strong> Every space between blocks, and every row, field and gap in the window, is now a multiple of 8 px at Actual Size: 16 px around paragraphs, lists and tables, 8 px between list items, 24 px around quotes, 32 px rows in menus and the side panels. Line heights stay a ratio of the font size, as before.</li>
-				<li><strong>A smaller default size.</strong> The document&#39;s text is 13 px by default, where it was 14.</li>
-				<li><strong>The text runs down to the foot of the window.</strong> The document&#39;s last line now stands just above the bottom row of icons, not 80 px above it.</li>
-				<li><strong>Nested files and headings sit closer.</strong> Each level of the file list and the outline steps 24 px in, where it stepped 40.</li>
-				<li><strong>The find bar is compact.</strong> Find and replace sit in one bar 600 px wide, centred over the text, instead of spreading across the whole window.</li>
-				<li><strong>Chinese and Japanese in their own fonts.</strong> Japanese, Traditional Chinese, Simplified Chinese and Korean are each drawn in the font your system uses for that language, as the system&#39;s own apps draw them, where before all of them were drawn in a Simplified Chinese font.</li>
-			</ul>
-			<p><strong>New in the window and its icons</strong></p>
-			<ul>
-				<li><strong>The icons are always shown.</strong> The rows of icons at the top and bottom of the window are visible from the start, without hovering over them. Turn on Auto-hide toolbar in Settings to have them fade until you move to them.</li>
-				<li><strong>Theme and Help move to the bottom row,</strong> making room for Insert Skeleton at the top.</li>
+				<li><strong>Empty lines in lists and quotes keep their space.</strong> An empty line inside a list item or a quote is now drawn as an empty paragraph of that item or quote, so nothing below it moves when the caret arrives on it or leaves it.</li>
+				<li><strong>Blank lines between list items are lines you can write on.</strong> The caret rests on each of them, Up and Down stop there, and you can type there. Backspace, Delete and Enter on such a line take away or add one line.</li>
+				<li><strong>Text typed on an empty line in a list item stays in that item.</strong> It no longer leaves the list and cuts the item in two; in a quote it stays in the quote.</li>
+				<li><strong>An emptied paragraph keeps its line.</strong> When you delete all the text of a paragraph that stands between two headings or other blocks, its line stays as an empty paragraph, and the text below no longer jumps up.</li>
+				<li><strong>Spaces at the start of a line are shown as typed.</strong> A paragraph&#39;s leading spaces and tabs are drawn where you typed them, in Edit and in Read, and the caret stays after them. HTML and PDF exports show them as the window does.</li>
+				<li><strong>Four spaces never make a code block.</strong> A line that starts with four or more spaces, or with a tab, stays the text it was; code blocks come only from fences. A file written elsewhere with an indented code block opens as indented text.</li>
 			</ul>
 			<p><strong>New in Help</strong></p>
 			<ul>
-				<li><strong>Help in four languages.</strong> Help is written in British English, Simplified Chinese, Traditional Chinese and Japanese, and opens in the first of your system&#39;s languages it is written in, else in British English. Its examples are translated too; commands, shortcuts and skeleton names stay in English.</li>
-				<li><strong>Templates in every section.</strong> Each how-to section of Help carries a skeleton you can copy, and shortcuts are shown as code.</li>
+				<li><strong>Choose Help&#39;s language.</strong> A language icon at the top of Help&#39;s window lists English, 简体中文, 繁體中文 and 日本語. Pick one and Help is redrawn in it at once, and opens in it from then on; pick the row marked System to follow your system again.</li>
+				<li><strong>Skeletons in Help&#39;s language.</strong> Insert Skeleton writes the placeholder words of its skeletons, such as Title, Section and Item, in the language Help is shown in. The Markdown marks stay the same.</li>
 			</ul>
-			<p><strong>New in the app</strong></p>
+			<p><strong>New in the Linux packages</strong></p>
 			<ul>
-				<li><strong>A new icon:</strong> the Dark Back logo, two gold bars across a black square, crossed by two slanted gold strokes. Help&#39;s About page shows it too.</li>
-				<li><strong>British English throughout.</strong> The interface is written in British English, such as Window → Minimise.</li>
+				<li><strong>The Linux packages now need Ubuntu 24.04 or newer (glibc 2.39); 0.83.8&#39;s were built for Ubuntu 22.04.</strong></li>
+				<li>They run on Ubuntu 24.04 and 26.04, Debian 13, Arch and Omarchy, and not on older systems such as Ubuntu 22.04 or Debian 12.</li>
 			</ul>
 
 			<h3>macOS (Apple silicon)</h3>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">18.5 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">18.5 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
 			<p>Open the <code>.dmg</code> and drag Marktone into Applications. The first time, right-click Marktone in Applications and choose Open: Marktone is not notarised by Apple, so macOS refuses a plain double-click.</p>
 
 			<h3>Linux (x86-64)</h3>
@@ -69,9 +58,9 @@
 				<button type="button" class="copy" aria-label="Copy the uninstall line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg><span class="copy-hint" aria-hidden="true"></span></button>
 			</div>
 			<p>Or download a package:</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">23.9 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">25.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">25.2 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.83.8/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">23.6 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">24.8 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">24.8 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.85.4/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
 		</section>
 
 		<section>
