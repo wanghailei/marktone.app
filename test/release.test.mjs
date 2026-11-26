@@ -11,13 +11,19 @@ const NOTES = `Marktone 0.41.1 for Linux on x86-64, built from \`main\` at 8d65f
 Not yet seen in a real window on a Mac: Read mode.
 `
 
-test( "When the release has every installer, it is complete", () => {
+test( "When a release carries the three supported installers and their checksums, it is complete without Debian", () => {
 	assert.equal( privateRelease().complete, true )
 } )
 
 test( "When the Mac disk image is not yet attached, the release is not complete", () => {
 	assert.equal( privateRelease( { without: [ "Marktone_0.41.1_aarch64.dmg" ] } ).complete, false )
 } )
+
+for( const checksum of [ "Marktone_0.41.1_aarch64.dmg.sha256", "marktone_0.41.1_linux.sha256" ] ) {
+	test( `When an installer checksum is not yet attached, the release is not complete — ${ checksum }`, () => {
+		assert.equal( privateRelease( { without: [ checksum ], extra: [ "marktone_0.41.1_amd64.deb" ] } ).complete, false )
+	} )
+}
 
 test( "When the notes list what is new, the public notes carry that list and the download page", () => {
 	assert.equal( privateRelease( { body: NOTES } ).publicNotes, "**New since 0.40.1**\n- **A file opened from a blank window opens in that window.**\n- **Body text is 400 Regular by default.**\n\nDownload and install: https://marktone.app/download/\n" )
