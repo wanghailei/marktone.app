@@ -1,27 +1,22 @@
 {
-	"version": "0.87.4",
+	"version": "0.89.3",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in Editing**\n- **One Enter, one line.** One press of Enter now moves the caret and the text below by exactly one line, where it moved two: above several empty lines, at the start of a paragraph, and when pressed repeatedly inside a paragraph.\n- **No extra empty line at a line break.** Enter at a line break inside a paragraph no longer leaves an extra empty line.\n\n**New in Settings**\n- **A click over the hidden part of the Font family list closes it.** When Settings have scrolled part of an open Font family list out of view, a click over that part now closes the list.",
+	"changes": "**New in the interface's language**\n- **The interface follows the system.** Marktone now opens in the first of the system's languages that it is written in: English, Simplified Chinese, Traditional Chinese or Japanese. Until now the interface stayed in British English.\n- **A Language choice in Settings.** Settings now have Language, first under Interface: Follow System, then each language in its own script. Every word of the interface follows the choice at once, in every window. Help follows that language until you pick a language in Help itself.\n\n**New in Editing**\n- **Enter at the start of a quote.** Pressing Enter at the start of a quotation's first line now moves the quote down one line, as it does for a paragraph. Empty lines before the quote are drawn and can take the caret.\n- **Enter on an empty line above a block.** Pressing Enter on an empty line above a block, where the caret does not rest at the start, now takes the caret and the block below down one line. Backspace still takes back the empty lines above a block, but leaves a line that already holds the writer's spaces.\n\n**New in Chinese**\n- **界面 in both written forms.** The word for the interface is now 界面 in both Simplified and Traditional Chinese, including Settings and Help. Traditional Chinese had used 介面, so the two variants no longer use different words for the same thing.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-arm64.dmg",
-			"sha256": "ee04816722e1c6637cb6ff8d2c6ca422f8435463afaf190391facbe8cdf4447f",
-			"size": 18484074
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-arm64.dmg",
+			"sha256": "49e57b19094c3b279f73910f026a4c50514c49c6bd635369f9de2506fc8dfdb4",
+			"size": 18582973
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-x86_64.AppImage",
-			"sha256": "f77c5e9674d3d63310e979efb56002bcf9ce67cfbd1f6b18cd8e9b24e70c6953",
-			"size": 23640568
-		},
-		"linux-x86_64-deb": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-amd64.deb",
-			"sha256": "acb47131f25be337a51d7531e046f0167d05c4f7af55f72fd0a39c50dce8f5e0",
-			"size": 24865218
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-x86_64.AppImage",
+			"sha256": "2c66884420872e7cf27f4dcfb6bae704b82f3f66dfe7ae73680c242bd38a5d93",
+			"size": 23738872
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.87.4/Marktone-x86_64.tar.gz",
-			"sha256": "9c2ec70539a3dd2c8e0ba5482da7af0669d1a4f1e6925ef2fc6ff90eec987c2f",
-			"size": 24845009
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-x86_64.tar.gz",
+			"sha256": "6443b091d4ea43d22a3016d0658fcb149403757ee836be6b4f3c30f0507cb75e",
+			"size": 24966163
 		}
 	}
 }
