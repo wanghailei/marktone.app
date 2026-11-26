@@ -5,8 +5,8 @@ import { join } from "node:path"
 import { Installer, Release, Site } from "../lib/marktone.mjs"
 
 // A private release as `gh release view --json tagName,body,assets` gives it, with every installer of the version unless some are left out.
-export function privateRelease( { version = "0.41.1", body = "", without = [] } = {} ) {
-	const names = [ `Marktone_${ version }_aarch64.dmg`, `Marktone_${ version }_aarch64.dmg.sha256`, `marktone_${ version }_x86_64.AppImage`, `marktone_${ version }_amd64.deb`, `marktone_${ version }_x86_64.tar.gz`, `marktone_${ version }_linux.sha256` ].filter( ( name ) => !without.includes( name ) )
+export function privateRelease( { version = "0.41.1", body = "", without = [], extra = [] } = {} ) {
+	const names = [ `Marktone_${ version }_aarch64.dmg`, `Marktone_${ version }_aarch64.dmg.sha256`, `marktone_${ version }_x86_64.AppImage`, `marktone_${ version }_x86_64.tar.gz`, `marktone_${ version }_linux.sha256`, ...extra ].filter( ( name ) => !without.includes( name ) )
 	return new Release( { tagName: `v${ version }`, body, assets: names.map( ( name ) => ( { name } ) ) } )
 }
 

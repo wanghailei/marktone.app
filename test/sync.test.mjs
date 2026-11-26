@@ -67,28 +67,41 @@ test( "When the newest release is already on the site, its pages are rendered ag
 	} )
 } )
 
-test( "When the newest release lacks an installer, nothing is published", () => {
-	withinSite( "0.40.1", ( site ) => {
-		const destination = new Destination()
-		const release = privateRelease( { without: [ "Marktone_0.41.1_aarch64.dmg" ] } )
+for( const missing of [ "Marktone_0.89.2_aarch64.dmg", "marktone_0.89.2_x86_64.AppImage", "marktone_0.89.2_x86_64.tar.gz", "Marktone_0.89.2_aarch64.dmg.sha256", "marktone_0.89.2_linux.sha256" ] ) {
+	test( `When the newest release lacks a required asset, nothing is published — ${ missing }`, () => {
+		withinSite( "0.87.4", ( site ) => {
+			const destination = new Destination()
+			const release = privateRelease( { version: "0.89.2", without: [ missing ], extra: [ "marktone_0.89.2_amd64.deb" ] } )
 
-		new Sync( { source: new Source( release ), destination, site } ).sync()
+			const result = new Sync( { source: new Source( release ), destination, site } ).sync()
 
-		assert.deepEqual( destination.published, [] )
-		assert.equal( site.version, "0.40.1" )
+			assert.match( result, /is not complete yet/ )
+			assert.deepEqual( destination.published, [] )
+			assert.equal( site.version, "0.87.4" )
+		} )
 	} )
-} )
+}
 
-test( "When a new complete release appears, it is published and the site points to it", () => {
-	withinSite( "0.40.1", ( site ) => {
-		const destination = new Destination()
+for( const extra of [ [], [ "marktone_0.89.2_amd64.deb" ] ] ) {
+	test( `When a new release has every required asset, only supported installers and their checksums are published — ${ extra.length ? "with an extra Debian package" : "without Debian" }`, () => {
+		withinSite( "0.87.4", ( site, folder ) => {
+			const destination = new Destination()
+			const release = privateRelease( { version: "0.89.2", extra } )
 
-		new Sync( { source: new Source( privateRelease() ), destination, site } ).sync()
+			new Sync( { source: new Source( release ), destination, site } ).sync()
 
-		assert.deepEqual( destination.published, [ { tag: "v0.41.1", title: "Marktone 0.41.1", files: [ "Marktone-amd64.deb", "Marktone-amd64.deb.sha256", "Marktone-arm64.dmg", "Marktone-arm64.dmg.sha256", "Marktone-x86_64.AppImage", "Marktone-x86_64.AppImage.sha256", "Marktone-x86_64.tar.gz", "Marktone-x86_64.tar.gz.sha256" ] } ] )
-		assert.equal( site.version, "0.41.1" )
+			assert.deepEqual( destination.published, [ { tag: "v0.89.2", title: "Marktone 0.89.2", files: [ "Marktone-arm64.dmg", "Marktone-arm64.dmg.sha256", "Marktone-x86_64.AppImage", "Marktone-x86_64.AppImage.sha256", "Marktone-x86_64.tar.gz", "Marktone-x86_64.tar.gz.sha256" ] } ] )
+			const feed = JSON.parse( readFileSync( join( folder, "download/latest.json" ), "utf8" ) )
+			assert.equal( feed.version, "0.89.2" )
+			assert.deepEqual( Object.keys( feed.assets ).sort(), [ "linux-x86_64-appimage", "linux-x86_64-tar", "macos-arm64" ] )
+			for( const page of [ "index.html", "download/index.html" ] ) {
+				const text = readFileSync( join( folder, page ), "utf8" )
+				assert.match( text, /Version 0\.89\.2/, page )
+				assert.doesNotMatch( text, /\.deb\b|sudo apt install/, page )
+			}
+		} )
 	} )
-} )
+}
 
 test( "When more than three releases are public, the oldest are deleted", () => {
 	withinSite( "0.38.1", ( site ) => {

@@ -18,7 +18,7 @@ const sha256 = ( text ) => createHash( "sha256" ).update( text ).digest( "hex" )
 // Publishes 0.41.1 into an empty site folder, from installer files whose contents are their short names.
 function withinPublishedSite( work ) {
 	return withinFolder( ( folder ) => {
-		const contents = new Map( [ [ Installer.mac, "dmg" ], [ Installer.appimage, "appimage" ], [ Installer.deb, "deb" ], [ Installer.tarball, "tar" ] ] )
+		const contents = new Map( [ [ Installer.mac, "dmg" ], [ Installer.appimage, "appimage" ], [ Installer.tarball, "tar" ] ] )
 		const packages = [ ...contents ].map( ( [ installer, text ] ) => {
 			writeFileSync( join( folder, installer.sourceName( "0.41.1" ) ), text )
 			return Package.prepare( { installer, version: "0.41.1", folder } )
@@ -45,8 +45,11 @@ test( "When a version is published, the feed names it with its notes on the site
 
 		assert.equal( feed.version, "0.41.1" )
 		assert.equal( feed.notes, "https://marktone.app/download/" )
-		assert.deepEqual( Object.keys( feed.assets ).sort(), [ "linux-x86_64-appimage", "linux-x86_64-deb", "linux-x86_64-tar", "macos-arm64" ] )
-		assert.deepEqual( feed.assets[ "linux-x86_64-deb" ], { url: "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb", sha256: sha256( "deb" ), size: 3 } )
+		assert.deepEqual( feed.assets, {
+			"macos-arm64": { url: "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-arm64.dmg", sha256: sha256( "dmg" ), size: 3 },
+			"linux-x86_64-appimage": { url: "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.AppImage", sha256: sha256( "appimage" ), size: 8 },
+			"linux-x86_64-tar": { url: "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-x86_64.tar.gz", sha256: sha256( "tar" ), size: 3 },
+		} )
 	} )
 } )
 
@@ -55,7 +58,7 @@ test( "When a version is published, the download page links every installer of t
 		const page = readFileSync( join( folder, "download/index.html" ), "utf8" )
 
 		assert.match( page, /Version 0\.41\.1/ )
-		for( const name of [ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-amd64.deb", "Marktone-x86_64.tar.gz" ] ) {
+		for( const name of [ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-x86_64.tar.gz" ] ) {
 			assert.ok( page.includes( `https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/${ name }"` ), name )
 			assert.ok( page.includes( `https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/${ name }.sha256"` ), `${ name }.sha256` )
 		}
@@ -67,8 +70,25 @@ test( "When a version is published, the home page links every installer of that 
 		const page = readFileSync( join( folder, "index.html" ), "utf8" )
 
 		assert.match( page, /Version 0\.41\.1/ )
-		for( const name of [ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-amd64.deb", "Marktone-x86_64.tar.gz" ] ) {
+		for( const name of [ "Marktone-arm64.dmg", "Marktone-x86_64.AppImage", "Marktone-x86_64.tar.gz" ] ) {
 			assert.ok( page.includes( `https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/${ name }"` ), name )
+		}
+	} )
+} )
+
+test( "When a historical feed still lists Debian, re-rendering keeps its existing download link", () => {
+	withinFolder( ( folder ) => {
+		const site = siteWithFeed( folder )
+		const path = join( folder, "download/latest.json" )
+		const feed = JSON.parse( readFileSync( path, "utf8" ) )
+		const url = "https://github.com/wanghailei/marktone.app/releases/download/v0.41.1/Marktone-amd64.deb"
+		feed.assets[ "linux-x86_64-deb" ] = { url, sha256: "0".repeat( 64 ), size: 12_345_678 }
+		writeFileSync( path, JSON.stringify( feed ) )
+
+		site.render()
+
+		for( const page of [ "index.html", "download/index.html" ] ) {
+			assert.ok( readFileSync( join( folder, page ), "utf8" ).includes( `href="${ url }"` ), page )
 		}
 	} )
 } )
