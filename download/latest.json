@@ -1,22 +1,22 @@
 {
-	"version": "0.89.3",
+	"version": "0.89.7",
 	"notes": "https://marktone.app/download/",
-	"changes": "**New in the interface's language**\n- **The interface follows the system.** Marktone now opens in the first of the system's languages that it is written in: English, Simplified Chinese, Traditional Chinese or Japanese. Until now the interface stayed in British English.\n- **A Language choice in Settings.** Settings now have Language, first under Interface: Follow System, then each language in its own script. Every word of the interface follows the choice at once, in every window. Help follows that language until you pick a language in Help itself.\n\n**New in Editing**\n- **Enter at the start of a quote.** Pressing Enter at the start of a quotation's first line now moves the quote down one line, as it does for a paragraph. Empty lines before the quote are drawn and can take the caret.\n- **Enter on an empty line above a block.** Pressing Enter on an empty line above a block, where the caret does not rest at the start, now takes the caret and the block below down one line. Backspace still takes back the empty lines above a block, but leaves a line that already holds the writer's spaces.\n\n**New in Chinese**\n- **界面 in both written forms.** The word for the interface is now 界面 in both Simplified and Traditional Chinese, including Settings and Help. Traditional Chinese had used 介面, so the two variants no longer use different words for the same thing.",
+	"changes": "",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-arm64.dmg",
-			"sha256": "49e57b19094c3b279f73910f026a4c50514c49c6bd635369f9de2506fc8dfdb4",
-			"size": 18582973
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.7/Marktone-arm64.dmg",
+			"sha256": "4e9aff69db47763b6939f5fe277c44fb34db888fd4f4fb1f9b566774bcef0b21",
+			"size": 18595822
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-x86_64.AppImage",
-			"sha256": "2c66884420872e7cf27f4dcfb6bae704b82f3f66dfe7ae73680c242bd38a5d93",
-			"size": 23738872
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.7/Marktone-x86_64.AppImage",
+			"sha256": "1d6919fe2a8e9cbebde67e7c990349c8104d3958e973337d181739cfde8c9fd2",
+			"size": 23742968
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.3/Marktone-x86_64.tar.gz",
-			"sha256": "6443b091d4ea43d22a3016d0658fcb149403757ee836be6b4f3c30f0507cb75e",
-			"size": 24966163
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.7/Marktone-x86_64.tar.gz",
+			"sha256": "38094b4db3e48513a068e74128aa594d4b29b89504a68e7501bfe4c0579ca8db",
+			"size": 24975788
 		}
 	}
 }
