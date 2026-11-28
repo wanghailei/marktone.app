@@ -1,22 +1,27 @@
 {
-	"version": "0.89.11",
+	"version": "0.90.3",
 	"notes": "https://marktone.app/download/",
-	"changes": "",
+	"changes": "**New since 0.89.11**\n- Cmd-click on macOS or Ctrl-click on Linux follows links to headings in the same document, so you can jump to a section without leaving Marktone.\n- Links use the theme’s accent colour. Lists sit flush with the text column, and consistent line heights and balanced code-block padding make documents easier to scan.\n- Help opens with the Marktone heading and introduction, without a separate About section.\n- On macOS, installing Marktone keeps the terminal launcher in step with the installed app.",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-arm64.dmg",
-			"sha256": "6f7746b8fbdac38fc7b99ea82cb1ad954c3b1dbf71678d72e3687b9d09ad7fae",
-			"size": 18576499
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-arm64.dmg",
+			"sha256": "f6f24f81f4d668838eb08c5d6a1a24121d0c1a3f24a4d99a87a4c7929cca278c",
+			"size": 18620641
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.AppImage",
-			"sha256": "154492e398cbe6e0fb18632688c3e78c1430077bb702f682fbc1036ec9ea291f",
-			"size": 23710200
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.AppImage",
+			"sha256": "a6230a1ffa8a93e766de0a0d508f36a103279c0577498c0237cc3d03187780c5",
+			"size": 23759352
+		},
+		"linux-x86_64-deb": {
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-amd64.deb",
+			"sha256": "35a5b8125a0507396135b815ec34c9a7d90c6b82a39aebcb88856b4a3b4b0ed8",
+			"size": 25023842
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.tar.gz",
-			"sha256": "73ca958f95fc9c4ecb1d1eeb6865f229bebce2b0ca6f52ca82f2433ce9495da0",
-			"size": 24976430
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.tar.gz",
+			"sha256": "482b8c0c2bbf41cb647515eddb22a2e0663e342661031d4433cbd2b41daa53a4",
+			"size": 25000083
 		}
 	}
 }

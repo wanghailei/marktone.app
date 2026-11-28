@@ -21,11 +21,18 @@
 
 		<section>
 			<h2>Download</h2>
-			<p class="muted">Version 0.89.11</p>
+			<p class="muted">Version 0.90.3</p>
+			<p><strong>New since 0.89.11</strong></p>
+			<ul>
+				<li>Cmd-click on macOS or Ctrl-click on Linux follows links to headings in the same document, so you can jump to a section without leaving Marktone.</li>
+				<li>Links use the theme’s accent colour. Lists sit flush with the text column, and consistent line heights and balanced code-block padding make documents easier to scan.</li>
+				<li>Help opens with the Marktone heading and introduction, without a separate About section.</li>
+				<li>On macOS, installing Marktone keeps the terminal launcher in step with the installed app.</li>
+			</ul>
 
 			<h3>macOS (Apple silicon)</h3>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">18.6 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
-			<p>Open the <code>.dmg</code> and drag Marktone into Applications. The first time, right-click Marktone in Applications and choose Open: Marktone is not notarised by Apple, so macOS refuses a plain double-click.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-arm64.dmg">↓ Marktone-arm64.dmg</a> <span class="muted">18.6 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-arm64.dmg.sha256">SHA-256</a></span></p>
+			<p>Open the <code>.dmg</code> and drag Marktone into Applications. Marktone is ad hoc signed and not notarised by Apple. macOS may block the first launch.</p>
 
 			<h3>Linux (x86-64)</h3>
 			<p>Install Marktone, or update it, with one line in a terminal. It puts Marktone, its menu entry and its icon in your own folders under <code>~/.local</code>, and needs no <code>sudo</code>:</p>
@@ -39,8 +46,9 @@
 				<button type="button" class="copy" aria-label="Copy the uninstall line" hidden><svg class="copy-sheets" viewBox="0 0 16 16" aria-hidden="true"><rect x="5.5" y="5.5" width="8" height="8"/><path d="M10.5 3.5v-1h-8v8h1"/></svg><svg class="copy-done" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3.5 3.5 6.5-8"/></svg><span class="copy-hint" aria-hidden="true"></span></button>
 			</div>
 			<p>Or download a package:</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">23.7 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
-			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">25.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.AppImage">↓ Marktone-x86_64.AppImage</a> <span class="muted">23.8 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.AppImage.sha256">SHA-256</a></span><br>For a portable copy, make it executable with <code>chmod +x Marktone-x86_64.AppImage</code>, then run it. To install the AppImage with a menu entry and Markdown file associations, use <code>curl -fsSL https://marktone.app/install.sh | sh -s -- --appimage</code>.</p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-amd64.deb">↓ Marktone-amd64.deb</a> <span class="muted">25.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-amd64.deb.sha256">SHA-256</a></span><br>On Debian or Ubuntu: <code>sudo apt install ./Marktone-amd64.deb</code></p>
+			<p><a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.tar.gz">↓ Marktone-x86_64.tar.gz</a> <span class="muted">25.0 MB · <a href="https://github.com/wanghailei/marktone.app/releases/download/v0.90.3/Marktone-x86_64.tar.gz.sha256">SHA-256</a></span><br>Unpack it and run <code>marktone</code> in the unpacked folder; its desktop file and icon are beside it.</p>
 		</section>
 	</main>
 	<footer>© 2026 <a href="https://whl.ltd">Wanted Hacker Limited</a> / WANG Hailei</footer>
