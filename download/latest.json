@@ -1,22 +1,22 @@
 {
-	"version": "0.89.10",
+	"version": "0.89.11",
 	"notes": "https://marktone.app/download/",
 	"changes": "",
 	"assets": {
 		"macos-arm64": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.10/Marktone-arm64.dmg",
-			"sha256": "f58a29cbc1fc1589a793082e6a5faa4f9e872f10aa64f920f038ef2a6f316aa0",
-			"size": 18578131
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-arm64.dmg",
+			"sha256": "6f7746b8fbdac38fc7b99ea82cb1ad954c3b1dbf71678d72e3687b9d09ad7fae",
+			"size": 18576499
 		},
 		"linux-x86_64-appimage": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.10/Marktone-x86_64.AppImage",
-			"sha256": "7c54a61ed0f7aa6ab036ed59746e6f3c6b63731220c48db4969d6ce291a25558",
-			"size": 23681528
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.AppImage",
+			"sha256": "154492e398cbe6e0fb18632688c3e78c1430077bb702f682fbc1036ec9ea291f",
+			"size": 23710200
 		},
 		"linux-x86_64-tar": {
-			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.10/Marktone-x86_64.tar.gz",
-			"sha256": "ed9cdfbb24ada3f7848840d1a49aa902eb159bee465219544c65669f545995bf",
-			"size": 24963684
+			"url": "https://github.com/wanghailei/marktone.app/releases/download/v0.89.11/Marktone-x86_64.tar.gz",
+			"sha256": "73ca958f95fc9c4ecb1d1eeb6865f229bebce2b0ca6f52ca82f2433ce9495da0",
+			"size": 24976430
 		}
 	}
 }
